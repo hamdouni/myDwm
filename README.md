@@ -31,3 +31,10 @@ How to install new alternative "x-file-manager" ?
 For example, to install thunar as an alternative for x-file-manager, do the below command :
 
         sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
+
+How to set the same font in DWM/Xft and in GTK apps ?
+------------------------------------------------------------
+
+For example, if we want the 'Ubuntu Mono' font at size 12 :
+
+        gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
