@@ -15,7 +15,7 @@ XINERAMALIBS = -L${X11LIB} -lXinerama
 XINERAMAFLAGS = -DXINERAMA
 
 # includes and libs
-INCS = -I. -I/usr/include -I${X11INC}
+INCS = -I. -I/usr/include -I/usr/include/freetype2 -I${X11INC}
 LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS} -lXft
 
 # flags
