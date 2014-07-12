@@ -54,12 +54,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "x-terminal-emulator", NULL };
 static const char *voldown[] = { "amixer", "set", "Master", "1-", NULL };
 static const char *volup[] = { "amixer", "set", "Master", "1+", NULL };
-static const char *volmute[] = { "amixer", "set", "Master", "0", NULL };
+static const char *volmute[] = { "amixer","-D", "pulse", "set", "Master", "toggle", NULL };
 static const char *filemanager[] = { "x-file-manager", NULL};
 static const char *trackpadonoff[] = {"trackpadonoff",NULL}; // touche FN+F3
-static const char *prev[] = { "mocp","-r",NULL};
-static const char *next[] = { "mocp","-f",NULL};
-static const char *play[] = { "mocp","-G",NULL};
+static const char *prev[] = { "myMocp","-r",NULL};
+static const char *next[] = { "myMocp","-f",NULL};
+static const char *play[] = { "myMocp","-G",NULL};
+static const char *browser[] = { "x-www-browser", NULL };
 
 
 
@@ -68,7 +69,6 @@ static Key keys[] = {
 	{ 0,				0x1008ff17,	spawn,	{.v = next} },
 	{ 0,				0x1008ff16,	spawn,	{.v = prev} },
 	{ 0,				0x1008ff14,	spawn,	{.v = play} },
-
 	{ 0,				0x1008ff11,	spawn,	{.v = voldown} },
 	{ 0,				0x1008ff13,	spawn,	{.v = volup} },
 	{ 0,				0x1008ff12,	spawn,	{.v = volmute} },
@@ -76,6 +76,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = filemanager } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
