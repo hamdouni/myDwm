@@ -3,13 +3,13 @@
 /* appearance */
 //static const char font[]            = "-misc-fixed-medium-r-*-*-17-*-*-*-*-*-*-*";
 static const char font[] = "Sans:size=13";
-static const char normbordercolor[] = "#999999"; /* fond du systray */
-static const char normbgcolor[]     = "#999999";
-static const char normfgcolor[]     = "#222222";
-static const char selbordercolor[]  = "#999999";
-static const char selbgcolor[]      = "#FFFFFF";
+static const char normbordercolor[] = "#222222"; /* fond du systray */
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#AAAAAA";
+static const char selbordercolor[]  = "#222222";
+static const char selbgcolor[]      = "#727272";
 static const char selfgcolor[]      = "#000000";
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray       = True;     /* False means no systray */
