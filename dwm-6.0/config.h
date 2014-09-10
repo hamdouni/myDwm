@@ -61,6 +61,7 @@ static const char *prev[] = { "myMocp","-r",NULL};
 static const char *next[] = { "myMocp","-f",NULL};
 static const char *play[] = { "myMocp","-G",NULL};
 static const char *browser[] = { "x-www-browser", NULL };
+static const char *slock[] = { "slock", NULL };
 
 
 
@@ -73,6 +74,7 @@ static Key keys[] = {
 	{ 0,				0x1008ff13,	spawn,	{.v = volup} },
 	{ 0,				0x1008ff12,	spawn,	{.v = volmute} },
 	{ 0,				0x1008ff93,	spawn,	{.v = trackpadonoff} },
+	{ MODKEY,                       XK_s,  	   spawn,          {.v = slock } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = filemanager } },
