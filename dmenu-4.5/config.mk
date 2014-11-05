@@ -13,7 +13,7 @@ XINERAMALIBS  = -lXinerama
 XINERAMAFLAGS = -DXINERAMA
 
 # Xft, comment if you don't want it
-XFTINC = -I/usr/local/include/freetype2
+XFTINC = -I/usr/include/freetype2
 XFTLIBS  = -lXft -lXrender -lfreetype -lz -lfontconfig
 
 # includes and libs
