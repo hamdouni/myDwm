@@ -1,0 +1,25 @@
+wmname - prints/sets the WM name
+================================
+Prints/sets the EWMH WM name property.
+
+
+Requirements
+------------
+In order to build wmname you need the Xlib header files.
+
+
+Installation
+------------
+Edit config.mk to match your local setup (wmname is installed into
+the /usr/local namespace by default).
+
+Afterwards enter the following command to build and install wmname
+(if necessary as root):
+
+    make clean install
+
+
+Running wmname
+--------------
+Run 'wmname' to print the current WM name. Run 'wmname <name>' to set it. This
+is pretty much similiar to hostname(1).
