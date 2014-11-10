@@ -5,6 +5,8 @@ Based on
 * [Dmenu 4.5](http://tools.suckless.org/dmenu/)
 * [Systray patch](http://dwm.suckless.org/patches/systray)
 * Xft patch : for [dwm](http://dwm.suckless.org/patches/xft) and [dmenu](http://tools.suckless.org/dmenu/patches/xft)
+* [wmname 0.1](http://tools.suckless.org/wmname)
+* [slock 1.1](http://tools.suckless.org/slock/)
 
 Default configuration
 ---------------------
