@@ -2,14 +2,14 @@
 
 /* appearance */
 //static const char font[]            = "-misc-fixed-medium-r-*-*-17-*-*-*-*-*-*-*";
-static const char font[] = "Sans:size=13";
-static const char normbordercolor[] = "#ededed"; /* fond du systray */
+static const char font[] = "Sans:size=12";
+static const char normbordercolor[] = "#ededed"; 
 static const char normbgcolor[]     = "#ededed";
 static const char normfgcolor[]     = "#222222";
-static const char selbordercolor[]  = "#FF6666";
-static const char selbgcolor[]      = "#ededed";
-static const char selfgcolor[]      = "#222222";
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const char selbordercolor[]  = "#ededed";
+static const char selbgcolor[]      = "#afd7a7";
+static const char selfgcolor[]      = "#005f00";
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray       = True;     /* False means no systray */

@@ -597,7 +597,7 @@ clientmessage(XEvent *e) {
 			XReparentWindow(dpy, c->win, systray->win, 0, 0);
 			/* use parents background pixmap */
 			swa.background_pixmap = ParentRelative;
-			swa.background_pixel  = dc.norm[ColBorder].pixel;
+			swa.background_pixel  = dc.norm[ColBG].pixel;
 			XChangeWindowAttributes(dpy, c->win, CWBackPixmap|CWBackPixel, &swa);
 			sendevent(c->win, netatom[Xembed], StructureNotifyMask, CurrentTime, XEMBED_EMBEDDED_NOTIFY, 0 , systray->win, XEMBED_EMBEDDED_VERSION);
 			/* FIXME not sure if I have to send these events, too */
