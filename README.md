@@ -19,24 +19,39 @@ Default configuration
 Usage
 -----
 
+```
         make
         sudo make install
+```
 
 Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then do the symbolic link below :
 
         sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
 
+An .xinitrc sample is present in dotfiles folder with custom info bar and laptop config. The dwm-loop is a shell script containing :
+
+```sh
+	#!/bin/sh
+	while true; do
+	    # Log stderror to a file 
+	    dwm 2> ~/.dwm.log
+	done
+```
 
 How to install new alternative "x-file-manager" ?
 ---------------------------------------------------
 
 For example, to install thunar as an alternative for x-file-manager, do the below command :
 
+```
         sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
+```
 
 How to set the same font in DWM/Xft and in GTK apps ?
 ------------------------------------------------------------
 
 For example, if we want the 'Ubuntu Mono' font at size 12 :
 
+```
         gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
+```

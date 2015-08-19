@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# dwm custom info bar
+while true
+do
+	VOL="$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
+	BAT="$(acpi -b | awk '{ print $4 }' | tr -d '%,')"
+	ACC="$(acpi -b | awk '{ print $3 }' | tr -d ',')"
+	if test $ACC = "Charging"; then
+		BAT="☢ $BAT"
+	else 
+		if test $BAT -lt 5; then
+			notify-send -u critical -i info -t 10 "ALERT BAT" "Level = $BAT%"
+			BAT="☹ $BAT"
+		else
+			BAT="⛁ $BAT"
+		fi
+	fi
+	TEMP="$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))"
+	LOCALTIME=$(date +'%H:%M:%S')
+    	STATUS="X`/sbin/iwgetid`"
+    	if test "$STATUS" != "X" ; then
+    	    ESSID="`/sbin/iwgetid |awk -F ":" '{print $2}'|sed -e 's/"//g'`"
+    	    LINK="`awk '/wlan0:/ {print $3}' /proc/net/wireless |sed -e 's/\.//g'`"
+    	fi
+	xsetroot -name "$BAT% $TEMP° ♪ $VOL ⚡ $ESSID $LINK% $LOCALTIME"
+	sleep 1s
+done &
+
+# screen brightness
+sudo pkexec xfpm-power-backlight-helper --set-brightness 40
+
+# deactivate screen blanking
+xset s off
+xset s 0 0
+xset s noblank
+xset -dpms
+
+# activate dual screen
+sleep 5 && disper -e -t bottom &
+
+# utilities
+blueman-applet &
+dropbox start &
+
+# background
+feh --bg-scale /home/hamdouni/Dropbox/public/dwm-1920x1200.png
+
+exec dbus-launch dwm-loop 2> ~/.xsession-errors
