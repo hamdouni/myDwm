@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if mocp -i ; then 
+	mocp $*
+else 
+	mocp -S
+	mocp -p
+fi
