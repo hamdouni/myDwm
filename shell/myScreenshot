@@ -1,0 +1,3 @@
+#!/bin/sh
+
+import /tmp/screenshot_$(date +%F_%H%M%S_%N).png
