@@ -3,13 +3,13 @@
 /* appearance */
 //static const char font[]            = "-misc-fixed-medium-r-*-*-17-*-*-*-*-*-*-*";
 static const char font[] = "Sans:size=12";
-static const char normbordercolor[] = "#ededed"; 
+static const char normbordercolor[] = "#073000"; 
 static const char normbgcolor[]     = "#ededed";
 static const char normfgcolor[]     = "#222222";
-static const char selbordercolor[]  = "#ededed";
-static const char selbgcolor[]      = "#afd7a7";
+static const char selbordercolor[]  = "#afd7a7";
+static const char selbgcolor[]      = "#ededed";
 static const char selfgcolor[]      = "#005f00";
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 6;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray       = True;     /* False means no systray */
@@ -29,7 +29,7 @@ static const Rule rules[] = {
 
 /* layout(s) */
 static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster      = 2;    /* number of clients in master area */
+static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
