@@ -14,6 +14,7 @@ Default configuration
 * Prefix path = /usr (need root access to install)
 * Preinstalled patches : systray and xft
 * Command key mapped on Windows key
+* win + e : open x-file-manager (see below how to to set alternatives) 
 * Font "Sans" size 12
 
 Usage
@@ -43,8 +44,13 @@ How to install new alternative "x-file-manager" ?
 
 For example, to install thunar as an alternative for x-file-manager, do the below command :
 
-```
+```shell
+        # For thunar
         sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
+        
+        # For nautilus (install alternative and prevent nautilus to open desktop) 
+        sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/nautilus 1000
+        gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
 
 How to set the same font in DWM/Xft and in GTK apps ?
