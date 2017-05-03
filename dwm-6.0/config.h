@@ -24,6 +24,7 @@ static const Rule rules[] = {
 /*	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 */
+    { "Wicd-client.py", NULL, NULL,       0,            True,        -1 },
     { "Update-manager", NULL, NULL,       0,            True,        -1 },
 	{ NULL,       NULL,       "Hangouts", 0,            True,        -1 },
 };
