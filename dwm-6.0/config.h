@@ -7,8 +7,8 @@ static const char normbordercolor[] = "#073000";
 static const char normbgcolor[]     = "#ededed";
 static const char normfgcolor[]     = "#222222";
 static const char selbordercolor[]  = "#afd7a7";
-static const char selbgcolor[]      = "#000000";
-static const char selfgcolor[]      = "#ededed";
+static const char selbgcolor[]      = "#ededed";
+static const char selfgcolor[]      = "#333333";
 static const unsigned int borderpx  = 6;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -17,7 +17,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5" };
+static const char *tags[] = { "1", "2", "3" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -26,7 +26,7 @@ static const Rule rules[] = {
 */
     { "Wicd-client.py", NULL, NULL,       0,            True,        -1 },
     { "Update-manager", NULL, NULL,       0,            True,        -1 },
-	{ NULL,       NULL,       "Hangouts", 0,            True,        -1 },
+	{ NULL,             NULL, "Hangouts", 0,            True,        -1 },
 };
 
 /* layout(s) */
