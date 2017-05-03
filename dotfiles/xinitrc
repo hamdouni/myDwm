@@ -1,42 +1,10 @@
 #!/bin/sh
 
-# dwm custom info bar
-a1="⬤"
-a2="◯"
-idx=1
-while true
-do
-	VOL="$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
-	BAT="$(acpi -b | awk '{ print $4 }' | tr -d '%,')"
-	ACC="$(acpi -b | awk '{ print $3 }' | tr -d ',')"
-	if test $ACC = "Charging"; then
-		BAT="☢ $BAT"
-	else 
-		if test $BAT -lt 10; then
-			eval anim=\$a$idx
-			BAT="$anim $BAT"
-			idx=$((idx+1))
-			if test $idx -gt 2; then idx=1; fi
-			paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga &
-		else
-			BAT="⛁ $BAT"
-		fi
-	fi
-	TEMP="$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))"
-	TEMP="$TEMP - $(($(cat /sys/class/thermal/thermal_zone1/temp) / 1000))"
-	TEMP="$TEMP - $(($(cat /sys/class/thermal/thermal_zone2/temp) / 1000))"
-	LOCALTIME=$(date +'%H:%M:%S')
-    	STATUS="X`/sbin/iwgetid`"
-    	if test "$STATUS" != "X" ; then
-    	    ESSID="`/sbin/iwgetid |awk -F ":" '{print $2}'|sed -e 's/"//g'`"
-    	    LINK="`awk '/wlan0:/ {print $3}' /proc/net/wireless |sed -e 's/\.//g'`"
-	else
-	    ESSID="no wifi"
-	    LINK="0"
-    	fi
-	xsetroot -name "$BAT% ($TEMP)° ♪ $VOL ⚡ $ESSID $LINK% $LOCALTIME"
-	sleep 1s
-done &
+# activate dual screen
+disper -e -t bottom &
+
+# dwm status bar
+slstatus -d
 
 # screen brightness
 sudo pkexec xfpm-power-backlight-helper --set-brightness 40
@@ -47,14 +15,27 @@ xset s 0 0
 xset s noblank
 xset -dpms
 
-# activate dual screen
-sleep 5 && disper -e -t bottom &
+# french keyboard
+setxkbmap fr &
+
+# numlock on
+numlockx &
 
 # utilities
+xsettingsd &
 blueman-applet &
 dropbox start &
+wicd-client -t &
+sudo update-notifier --force &
+xfce4-power-manager &
+
+# x resources
+xrdb -load ~/.Xresources
 
 # background
 feh --bg-scale /home/hamdouni/Dropbox/public/dwm-1920x1200.png
+
+# trackpad less sensitive
+synclient MaxTapTime=0 PalmDetect=1
 
 exec dbus-launch dwm-loop 2> ~/.xsession-errors
