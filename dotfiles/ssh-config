@@ -1,0 +1,4 @@
+# put this in ~/.ssh/config to avoid freeze and disconnection
+
+Host *
+  ServerAliveInterval 240

@@ -1,0 +1,13 @@
+alias df="df -h"
+alias du="du -h"
+alias gh="git log --pretty='format:%Cblue%h%Creset %ad %Cred%<(8,trunc)%an%Creset%Cgreen%d%Creset %s' --date=short"
+alias gr="git recall -d 7"
+alias poweroff="sudo poweroff -f"
+alias reboot="sudo reboot -f"
+alias dps='docker ps --format "table {{.Names}}	{{.Status}}	{{.Ports}}"'
+alias ls='ls --group-directories-first --color -hF'
+alias vb='vboxmanage'
+alias vbwin7='vb startvm win7'
+alias vbwin10='vb startvm win10'
+alias vbls='vb list vms'
+alias vbps='vb list runningvms'

@@ -1,0 +1,20 @@
+[user]
+	name = hamdouni
+	email = brahim@hamdouni.com
+[core]
+	autocrlf = input
+[push]
+	default = simple
+[credential]
+	helper = cache --timeout=360000
+	username = hamdouni
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[color]
+	ui = auto

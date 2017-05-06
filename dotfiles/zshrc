@@ -1,0 +1,43 @@
+# Paranoid umask
+umask 077
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="agnoster"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+source $HOME/src/dotfiles/aliases
+
+# User configuration
+export GOPATH="$HOME"
+export PATH="$PATH:$HOME/bin"
+export LANG=fr_FR.UTF-8
+export LESS="-XFR"
+setopt autopushd
+setopt nosharehistory 
+setopt NO_HUP
+setopt NO_CHECK_JOBS
+stty -ixon
+# config for todo.txt script (cf https://github.com/ginatrapani/todo.txt)
+alias todo=~/Dropbox/todo/todo.sh
+source ~/Dropbox/todo/todo_completion
+export TODOTXT_DEFAULT_ACTION=ls
+
+# Persistent directory stack (from http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html )
+DIRSTACKSIZE=9
+DIRSTACKFILE=~/.zdirs
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+fi
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
+
+# If on first tty1, launch X
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi
+
+# CD to the previous folder
+cd $OLDPWD
