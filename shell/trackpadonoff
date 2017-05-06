@@ -1,0 +1,5 @@
+#!/bin/sh
+# inverse la valeur TouchpadOff
+state=`synclient -l | grep TouchpadOff | awk {'print $3'}`
+newstate=`expr 1 - $state`
+synclient TouchPadoff=$newstate
