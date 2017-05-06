@@ -55,9 +55,9 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "x-terminal-emulator", NULL };
-static const char *voldown[] = { "amixer", "set", "Master", "1-", NULL };
-static const char *volup[] = { "amixer", "set", "Master", "1+", NULL };
-static const char *volmute[] = { "amixer","-D", "pulse", "set", "Master", "toggle", NULL };
+static const char *voldown[]  = { "pavol", "-", NULL };
+static const char *volup[]    = { "pavol", "+", NULL };
+static const char *volmute[]  = { "pavol","m", NULL };
 static const char *filemanager[] = { "x-file-manager", NULL};
 static const char *trackpadonoff[] = {"trackpadonoff",NULL}; // touche FN+F3
 static const char *prev[] = { "myMocp","-r",NULL};

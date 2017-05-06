@@ -43,6 +43,6 @@ static const struct arg args[] = {
 	{ cpu_perc, "⚅ %s ", NULL },
     { temp,     "%s⋮", "/sys/class/thermal/thermal_zone2/temp" },
 	{ ram_perc, "⌨ %s⋮", NULL },
-    { vol_perc, "♫ %s⋮", "/dev/mixer"},
+    { run_command, "♫ %s⋮", "pavol"},
 	{ datetime, "%s⋮",     "%y-%m-%d %T" },
 };
