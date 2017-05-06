@@ -27,6 +27,9 @@ Default configuration
   * win + TAB           : focus next area
   * win + shift + TAB   : focus previous area
   * win + shit + c      : close window
+  * win + PRINTSCREEN   : select a window to screenshot in file in /tmp (shell script myScreenshot)
+* Multimedia keys pilot moc "music on console" (shell script myMocp)
+* Volume keys pilot PulseAudio (shell script pavol)
 
 Make and install
 ----------------
@@ -38,7 +41,7 @@ Make and install
 * Makes and installs the programs in /usr/bin.
 * Copy shell scripts in /usr/bin. (dwm-loop, pavol)
 * Copy dotfiles in $HOME. (backup existings ones).
-* Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh)
+* Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh, moc)
 
 Troubleshoot
 ------------

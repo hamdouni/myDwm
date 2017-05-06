@@ -22,7 +22,7 @@ do
     cp ./dotfiles/$dot ~/.$dot
 done
 
-for app in disper xsettingsd blueman wicd-gtk feh
+for app in disper xsettingsd blueman wicd-gtk feh moc
 do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
