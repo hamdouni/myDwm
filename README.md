@@ -35,26 +35,18 @@ Make and install
     ./install
 ```
 
-Makes and installs the programs in /usr/bin.
-Copy shell scripts in /usr/bin. (dwm-loop, pavol)
-Copy dotfiles in $HOME. (backup existings ones).
-Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh)
+* Makes and installs the programs in /usr/bin.
+* Copy shell scripts in /usr/bin. (dwm-loop, pavol)
+* Copy dotfiles in $HOME. (backup existings ones).
+* Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh)
+
+Troubleshoot
+------------
 
 Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then do the symbolic link below :
 
 ```sh
         sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
-```
-
-A .xinitrc (or .xprofile) sample is present in [the dotfiles repo](./dotfiles) with custom info bar and laptop config. 
-The dwm-loop is a shell script containing :
-
-```sh
-	#!/bin/sh
-	while true; do
-	    # Log stderror to a file 
-	    dwm 2> ~/.dwm.log
-	done
 ```
 
 How to install new alternative "x-file-manager" ?
@@ -79,3 +71,4 @@ For example, if we want the 'Ubuntu Mono' font at size 12 :
 ```sh
         gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
 ```
+
