@@ -1,0 +1,30 @@
+#!/bin/sh
+
+for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname
+do
+    cd $src && make && sudo make clean install && make clean && cd ..
+done
+
+for script in dwm-loop pavol
+do
+    sudo cp shell/$script /usr/bin/
+    sudo chmod a+rx /usr/bin/$script
+done
+
+for dot in xinitrc zshrc aliases vimrc Xresources xserverrc
+do
+    if [ -e ~/.$dot ]
+    then
+        mv ~/.$dot ~/.$dot.bak
+    fi
+    cp ./dotfiles/$dot ~/.$dot
+done
+
+for app in disper xsettingsd blueman wicd-gtk feh
+do
+    res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
+    if [ "$res" != "installed" ]
+    then
+        sudo apt install "$app"
+    fi
+done

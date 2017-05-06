@@ -7,6 +7,7 @@ Based on
 * Xft patch : for [dwm](http://dwm.suckless.org/patches/xft) and [dmenu](http://tools.suckless.org/dmenu/patches/xft)
 * [wmname 0.1](http://tools.suckless.org/wmname)
 * [slock 1.1](http://tools.suckless.org/slock/)
+* [slstatus](https://github.com/drkhsh/slstatus)
 
 Default configuration
 ---------------------
@@ -31,9 +32,13 @@ Make and install
 ----------------
 
 ```sh
-        make
-        sudo make install
+    ./install
 ```
+
+Makes and installs the programs in /usr/bin.
+Copy shell scripts in /usr/bin. (dwm-loop, pavol)
+Copy dotfiles in $HOME. (backup existings ones).
+Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh)
 
 Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then do the symbolic link below :
 
@@ -41,7 +46,7 @@ Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding 
         sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
 ```
 
-A .xinitrc (or .xprofile) sample is present in [my dotfiles repo](https://github.com/hamdouni/dotfiles) with custom info bar and laptop config. 
+A .xinitrc (or .xprofile) sample is present in [the dotfiles repo](./dotfiles) with custom info bar and laptop config. 
 The dwm-loop is a shell script containing :
 
 ```sh

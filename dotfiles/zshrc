@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-source $HOME/src/dotfiles/aliases
+source $HOME/.aliases
 
 # User configuration
 export GOPATH="$HOME"
