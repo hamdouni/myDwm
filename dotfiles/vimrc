@@ -91,8 +91,6 @@ call KeyMap("C-f", "/")
 call KeyMap("C-h", ":%s/")
 " Ctrl Q - Quit
 call KeyMap("C-q", ":call MyQuit()<enter>")
-" Ctrl I - Toggle show invisibles chars
-call KeyMap("C-i", ":set list!<enter>")
 
 """ Color Scheme
 se background=dark
