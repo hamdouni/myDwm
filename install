@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd programs
-for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname
+for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname xsettingsd fonts-roboto
 do
     cd $src && make && sudo make clean install && make clean && cd ..
 done
@@ -13,7 +13,7 @@ do
     sudo chmod a+rx /usr/bin/$script
 done
 
-for dot in xinitrc zshrc aliases vimrc Xresources xserverrc
+for dot in xinitrc zshrc aliases vimrc Xresources xserverrc xsettingsd
 do
     if [ -e ~/.$dot ]
     then

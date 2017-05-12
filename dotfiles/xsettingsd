@@ -1,0 +1,16 @@
+Gtk/ButtonImages 1
+Gtk/ColorScheme ""
+Gtk/CursorThemeName "DMZ-White"
+Gtk/CursorThemeSize 18
+Gtk/FontName "Roboto 12"
+Gtk/MenuImages 1
+Gtk/ToolbarIconSize 3
+Gtk/ToolbarStyle 3
+Net/EnableEventSounds 1
+Net/EnableInputFeedbackSounds 1
+Net/IconThemeName "elementary"
+Net/ThemeName "Adwaita"
+Xft/Antialias 1
+Xft/HintStyle "hintslight"
+Xft/Hinting 1
+Xft/RGBA "rgb"
