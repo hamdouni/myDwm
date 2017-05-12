@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd programs
-for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname xsettingsd fonts-roboto
+for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname
 do
     cd $src && make && sudo make clean install && make clean && cd ..
 done
@@ -22,7 +22,7 @@ do
     cp ./dotfiles/$dot ~/.$dot
 done
 
-for app in disper xsettingsd blueman wicd-gtk feh moc
+for app in disper xsettingsd blueman wicd-gtk feh moc fonts-roboto
 do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
