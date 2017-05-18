@@ -1,48 +1,65 @@
 ! Use a nice truetype font and size by default... 
 XTerm*faceName: DejaVu Sans Mono for Powerline
 XTerm*faceSize: 10
-
 ! scale fonts correctly
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.antialias: 0
 Xft.dpi: 96
-
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 XTerm*loginshell: true
-
 ! I like a LOT of scrollback...
 XTerm*savelines: 16384
-
-! double-click to select whole URLs :D
-XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-
-! DOS-box colours...
-XTerm*foreground: rgb:cf/cf/cf
-XTerm*background: rgb:00/00/00
-XTerm*color0: rgb:00/00/00
-XTerm*color1: rgb:a8/00/00
-XTerm*color2: rgb:00/a8/00
-XTerm*color3: rgb:a8/54/00
-XTerm*color4: rgb:00/00/a8
-XTerm*color5: rgb:a8/00/a8
-XTerm*color6: rgb:00/a8/a8
-XTerm*color7: rgb:a8/a8/a8
-XTerm*color8: rgb:54/54/54
-XTerm*color9: rgb:fc/54/54
-XTerm*color10: rgb:54/fc/54
-XTerm*color11: rgb:fc/fc/54
-XTerm*color12: rgb:54/54/fc
-XTerm*color13: rgb:fc/54/fc
-XTerm*color14: rgb:54/fc/fc
-XTerm*color15: rgb:fc/fc/fc
-
 ! right hand side scrollbar...
 XTerm*rightScrollBar: true
 XTerm*ScrollBar: true
-
-! stop output to terminal from jumping down to bottom of scroll again
-! XTerm*scrollTtyOutput: false
-
-
+! copy to clipboard
 XTerm*selectToClipboard:true
+! Solarized color scheme for the X Window System
+! http://ethanschoonover.com/solarized
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
