@@ -1,6 +1,6 @@
 ! Use a nice truetype font and size by default... 
 XTerm*faceName: DejaVu Sans Mono for Powerline
-XTerm*faceSize: 10
+XTerm*faceSize: 12
 ! scale fonts correctly
 Xft.hinting: 1
 Xft.hintstyle: hintfull
