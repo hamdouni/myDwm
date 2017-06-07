@@ -13,13 +13,16 @@ do
     sudo chmod a+rx /usr/bin/$script
 done
 
-for dot in xinitrc zshrc aliases vimrc Xresources xserverrc xsettingsd
+# list of files and destination with : separation
+for dot in xinitrc:$HOME/.xinitrc zshrc:$HOME/.zshrc aliases:$HOME/.aliases vimrc:$HOME/.vimrc Xresources:$HOME/.Xresources xserverrc:$HOME/.xserverrc xsettingsd:$HOME/.xsettingsd vscode:$HOME/.config/Code/User/settings.json
 do
-    if [ -e ~/.$dot ]
+    file=${dot%%:*}
+    dest=${dot##*:}
+    if [ -e $dest ]
     then
-        mv ~/.$dot ~/.$dot.bak
+        mv $dest $dest.bak
     fi
-    cp ./dotfiles/$dot ~/.$dot
+    cp ./dotfiles/$file $dest
 done
 
 for app in disper xsettingsd blueman wicd-gtk feh moc fonts-roboto

@@ -1,0 +1,16 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.mouseWheelZoom": true,
+    "go.formatTool": "goimports",
+    "files.associations": {
+        "*.rsp": "html",
+        "*.r": "red"
+    },
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "'DejaVu Sans Mono for Powerline',  'DejaVu Sans Mono','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.iconTheme": "vs-minimal",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "typescript.disableAutomaticTypeAcquisition": true
+}
