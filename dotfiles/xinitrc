@@ -35,7 +35,7 @@ xfce4-power-manager &
 # x resources
 xrdb -load ~/.Xresources
 # background
-feh --bg-scale /home/hamdouni/Dropbox/public/dwm-1920x1200.png
+feh --bg-scale /home/hamdouni/Dropbox/public/si-wallpaper.png
 # trackpad less sensitive
 synclient MaxTapTime=0 PalmDetect=1
 # launch dwm
