@@ -5,7 +5,7 @@ computer=$(hostname)
 disposition="bottom"                # default
 brightness="40"                     # default
 case $computer in
-    xps15) disposition="left"  
+    xps15) disposition="right"
            brightness="400" ;;
     xps13) disposition="bottom"
            brightness="40"  ;;
@@ -38,5 +38,7 @@ xrdb -load ~/.Xresources
 feh --bg-scale /home/hamdouni/Dropbox/public/si-wallpaper.png
 # trackpad less sensitive
 synclient MaxTapTime=0 PalmDetect=1
+# bluetooth don't sleep
+sudo hciconfig hci0 lp rswitch,hold,park
 # launch dwm
 exec dbus-launch dwm-loop 2> ~/.xsession-errors
