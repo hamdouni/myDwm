@@ -8,13 +8,12 @@
         "*.rsp": "html",
         "*.r": "red"
     },
-    "editor.mouseWheelZoom": true,
     "workbench.sideBar.location": "left",
     "editor.fontFamily": "'Anonymous Pro for Powerline','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 18,
-    "editor.wordWrap": true,
-    "window.zoomLevel": 1
-    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "vs-minimal",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
