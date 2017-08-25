@@ -29,7 +29,7 @@ do
     cp ./dotfiles/$file $dest
 done
 
-for app in disper xsettingsd blueman wicd-gtk feh moc fonts-roboto
+for app in disper xsettingsd blueman wicd-gtk feh moc fonts-roboto xfce4-power-manager
 do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
