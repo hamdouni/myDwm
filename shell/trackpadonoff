@@ -1,5 +1,13 @@
 #!/bin/sh
-# inverse la valeur TouchpadOff
-state=`synclient -l | grep TouchpadOff | awk {'print $3'}`
-newstate=`expr 1 - $state`
-synclient TouchPadoff=$newstate
+computer=$(hostname)
+case $computer in
+        xps15)  state=`xinput list-props "DLL06E4:01 06CB:7A13 Touchpad" | grep "Device Enabled" | awk {'print $4'}`
+                newstate=`expr 1 - $state`
+                xinput set-prop "DLL06E4:01 06CB:7A13 Touchpad" "Device Enabled" $newstate
+                ;;
+        xps13)  state=`synclient -l | grep TouchpadOff | awk {'print $3'}`
+                newstate=`expr 1 - $state`
+                synclient TouchPadoff=$newstate
+                ;;
+esac
+
