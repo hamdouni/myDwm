@@ -7,7 +7,7 @@ do
 done
 cd ..
 
-for script in dwm-loop pavol myMocp myScreenshot
+for script in dwm-loop pavol myMocp myScreenshot trackpadonoff
 do
     sudo cp shell/$script /usr/bin/
     sudo chmod a+rx /usr/bin/$script
