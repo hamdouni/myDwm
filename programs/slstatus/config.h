@@ -41,7 +41,7 @@
 static const struct arg args[] = {
 	/* function	format        argument */
 	{ cpu_perc,     "⋮⚅ %s ",  NULL },
-    { temp,         "%s⋮",   "/sys/class/hwmon/hwmon1/temp1_input" },
+    { run_command, "%s °C⋮", "cputemp"},
 	{ ram_perc,     "⌨ %s⋮", NULL },
     { run_command,  "♫ %s⋮", "pavol"},
 	{ datetime,     "%s⋮",   "%y-%m-%d %T" },
