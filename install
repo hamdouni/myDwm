@@ -43,4 +43,5 @@ done
 # install good looking icons for wicd and xfce4-power man
 sudo cp ./assets/wicd-icons/* /usr/share/wicd/icons/hicolor/22x22/status/
 sudo cp ./assets/xfpm/* /usr/share/icons/hicolor/22x22/status
+sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
 
