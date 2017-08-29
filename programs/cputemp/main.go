@@ -10,10 +10,25 @@ import (
 )
 
 func main() {
+	// locate sensor index for cpu core temp
+	var index int
+	for i := 0; i < 128; i++ {
+		p := fmt.Sprintf("/sys/class/hwmon/hwmon%d/name", i)
+		if fileExists(p) {
+			data, err := ioutil.ReadFile(p)
+			if err != nil {
+				log.Fatalf("failed to read sensor name: %s - %v", p, err)
+			}
+			if string(data) == "coretemp\n" {
+				index = i
+				break
+			}
+		}
+	}
 	inputs := []string{}
 	// collect temp inputs, this may vary based on different kernels
 	for i := 1; i < 128; i++ { // might have 128 cores?
-		p := fmt.Sprintf("/sys/class/hwmon/hwmon0/temp%d_input", i)
+		p := fmt.Sprintf("/sys/class/hwmon/hwmon%d/temp%d_input", index, i)
 		if !fileExists(p) {
 			break
 		}
@@ -44,8 +59,8 @@ func main() {
 		avg += i
 	}
 
-	c := avg / len(inputs) / 1000
-	fmt.Println(c)
+	c := float64(avg) / float64(len(inputs)) / 1000.0
+	fmt.Printf("%.1f", c)
 }
 
 func fileExists(p string) bool {
