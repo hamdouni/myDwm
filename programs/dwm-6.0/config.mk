@@ -19,7 +19,7 @@ INCS = -I. -I/usr/include -I/usr/include/freetype2 -I${X11INC}
 LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS} -lXft
 
 # flags
-CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS} -Wno-deprecated-declarations
 #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
 CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 #LDFLAGS = -g ${LIBS}

@@ -3,7 +3,7 @@
 cd programs
 for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname cputemp
 do
-    cd $src && make && sudo make clean install && make clean && cd ..
+    cd $src && make -s && sudo make -s clean install && make -s clean && cd ..
 done
 cd ..
 
