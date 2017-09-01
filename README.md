@@ -60,9 +60,11 @@ For example, to install thunar as an alternative for x-file-manager, do the belo
 ```sh
         # For thunar
         sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
+        sudo update-alternatives --set x-file-manager /usr/bin/thunar
         
         # For nautilus (install alternative and prevent nautilus to open desktop) 
         sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/nautilus 1000
+        sudo update-alternatives --set x-file-manager /usr/bin/nautilus
         gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
 
