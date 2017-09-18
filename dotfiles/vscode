@@ -12,10 +12,14 @@
     "editor.fontFamily": "'Anonymous Pro for Powerline','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 18,
     "editor.wordWrap": "on",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "vs-minimal",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "typescript.disableAutomaticTypeAcquisition": true
+    "typescript.disableAutomaticTypeAcquisition": true,
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "workbench.startupEditor": "newUntitledFile",
+    "extensions.ignoreRecommendations": false,
+    "explorer.openEditors.visible": 0
 }
