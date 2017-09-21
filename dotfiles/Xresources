@@ -1,3 +1,5 @@
+! Big mouse
+Xcursor.size: 48
 ! Use a nice truetype font and size by default... 
 XTerm*faceName: DejaVu Sans Mono for Powerline
 XTerm*faceSize: 12
