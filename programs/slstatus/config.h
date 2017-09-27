@@ -44,5 +44,5 @@ static const struct arg args[] = {
     { run_command, "%s °C⋮", "cputemp"},
 	{ ram_perc,     "⌨ %s⋮", NULL },
     { run_command,  "♫ %s⋮", "pavol"},
-	{ datetime,     "%s⋮",   "%y-%m-%d %T" },
+	{ datetime,     "%s⋮",   "%d-%m-%Y %T" },
 };
