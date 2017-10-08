@@ -1,0 +1,10 @@
+monokai.vim:.vim/colors/monokai.vim
+xinitrc:.xinitrc
+zshrc:.zshrc
+aliases:.aliases
+vimrc:.vimrc
+Xresources:.Xresources
+xserverrc:.xserverrc
+xsettingsd:.xsettingsd
+vscode:.config/Code/User/settings.json
+mocp:.moc/config

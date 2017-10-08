@@ -1,23 +1,23 @@
 #!/bin/sh
 
 cd programs
-for src in dwm-6.0 dmenu-4.5 slock-1.1 slstatus wmname cputemp
+for src in $(ls)
 do
     cd $src && make -s && sudo make -s clean install && make -s clean && cd ..
 done
 cd ..
 
-for script in dwm-loop pavol myMocp myScreenshot trackpadonoff
+for script in $(ls shell)
 do
     sudo cp shell/$script /usr/bin/
     sudo chmod a+rx /usr/bin/$script
 done
 
 # list of files and destination with : separation
-for dot in monokai.vim:$HOME/.vim/colors/monokai.vim xinitrc:$HOME/.xinitrc zshrc:$HOME/.zshrc aliases:$HOME/.aliases vimrc:$HOME/.vimrc Xresources:$HOME/.Xresources xserverrc:$HOME/.xserverrc xsettingsd:$HOME/.xsettingsd vscode:$HOME/.config/Code/User/settings.json mocp:$HOME/.moc/config
+for dot in $(cat configs.list)
 do
     file=${dot%%:*}
-    dest=${dot##*:}
+    dest=$HOME/${dot##*:}
     if [ -e $dest ]
     then
         mv $dest $dest.bak
@@ -29,7 +29,7 @@ do
     cp ./dotfiles/$file $dest
 done
 
-for app in disper xsettingsd blueman wicd-gtk feh moc fonts-roboto xfce4-power-manager dunst elementary-icon-theme gnome-themes-standard
+for app in $(cat apps.list)
 do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
