@@ -35,7 +35,7 @@ xfce4-power-manager &
 # x resources
 xrdb -load ~/.Xresources
 # background
-feh --bg-scale /home/hamdouni/Dropbox/public/si-wallpaper.png
+feh --bg-scale ~/Dropbox/public/orion-nebula-3840x2160-hubble-space-telescope-nasa-hd-5k-1933.jpg
 # trackpad less sensitive
 synclient MaxTapTime=0 PalmDetect=1
 # bluetooth don't sleep
