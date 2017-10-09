@@ -1,13 +1,17 @@
 ! Big mouse
 Xcursor.size: 48
 ! Use a nice truetype font and size by default... 
-XTerm*faceName: DejaVu Sans Mono for Powerline
+XTerm*faceName: Hack
 XTerm*faceSize: 12
 ! scale fonts correctly
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.antialias: 0
 Xft.dpi: 96
+! font zoom with ctrl + and ctrl -
+XTerm.vt100.translations: #override \n\
+  Ctrl <Key> minus: smaller-vt-font() \n\
+  Ctrl <Key> plus: larger-vt-font()
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 XTerm*loginshell: true
 ! I like a LOT of scrollback...

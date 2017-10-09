@@ -9,8 +9,8 @@
         "*.r": "red"
     },
     "workbench.sideBar.location": "left",
-    "editor.fontFamily": "'Anonymous Pro for Powerline','Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 18,
+    "editor.fontFamily": "Hack, monospace",
+    "editor.fontSize": 16,
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Monokai",

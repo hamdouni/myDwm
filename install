@@ -38,7 +38,15 @@ do
     fi
 done
 
-# post installation
+# Hack fonts
+if [ ! -e $HOME/.fonts ]
+then
+    mkdir -p $HOME/.fonts
+fi
+cp ./assets/fonts/* $HOME/.fonts
+fc-cache -fv > /dev/null
+xrdb -merge $HOME/.Xresources
+gsettings set org.gnome.desktop.interface monospace-font-name 'Hack 12'
 
 # install good looking icons for wicd and xfce4-power man
 sudo cp ./assets/wicd-icons/* /usr/share/wicd/icons/hicolor/22x22/status/
