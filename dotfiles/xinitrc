@@ -30,7 +30,6 @@ xsettingsd &
 blueman-applet &
 dropbox start &
 wicd-client -t &
-sudo update-notifier --force &
 xfce4-power-manager &
 # x resources
 xrdb -load ~/.Xresources
