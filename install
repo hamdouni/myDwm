@@ -14,10 +14,13 @@ do
 done
 
 # list of files and destination with : separation
+oldIFS=$IFS
 for dot in $(cat configs.list)
 do
-    file=${dot%%:*}
-    dest=$HOME/${dot##*:}
+    IFS=':' 
+    set -- $dot
+    file=$1
+    dest=$2
     if [ -e $dest ]
     then
         mv $dest $dest.bak
@@ -28,6 +31,7 @@ do
     fi
     cp ./dotfiles/$file $dest
 done
+IFS=$oldIFS
 
 for app in $(cat apps.list)
 do
