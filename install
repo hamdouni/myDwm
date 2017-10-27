@@ -20,7 +20,7 @@ do
     IFS=':' 
     set -- $dot
     file=$1
-    dest=$2
+    dest=$HOME/$2
     if [ -e $dest ]
     then
         mv $dest $dest.bak
@@ -41,6 +41,20 @@ do
         sudo apt install "$app"
     fi
 done
+
+# list of webapps tag:filename:url
+oldIFS=$IFS
+for dot in $(cat webapps.list)
+do
+    IFS=';' 
+    set -- $dot
+    tag=$1
+    filename=$2
+    url=$3
+    echo "#!/bin/sh\nchromium-browser --disable-background-networking --class='$tag' -user-data-dir=$HOME/.$tag --app='$url'" > $HOME/bin/$filename
+    chmod a+x $HOME/bin/$filename
+done
+IFS=$oldIFS
 
 # Hack fonts
 if [ ! -e $HOME/.fonts ]
