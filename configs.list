@@ -8,3 +8,5 @@ xserverrc:.xserverrc
 xsettingsd:.xsettingsd
 vscode:.config/Code/User/settings.json
 mocp:.moc/config
+gtk.css:.config/gtk-3.0/gtk.css
+gtkrc:.config/gtk-2.0/gtkrc
