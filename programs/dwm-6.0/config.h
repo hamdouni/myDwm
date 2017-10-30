@@ -17,13 +17,14 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1_main", "2_code", "3_backlog", "4_master", "5_agenda", "6_gmail", "7_music" };
+static const char *tags[] = { "1_main", "2_code", "3_backlog", "4_master", "5_agenda", "6_gmail", "7_music", "8_chats" };
 
 static const Rule rules[] = {
 	/* class      		instance    title       	tags mask     isfloating	monitor */
     { "Wicd-client.py", NULL, 		NULL,       		0,          True,	  	-1 },
     { "Update-manager", NULL, 		NULL,       		0,          True,	  	-1 },
 	{ NULL,             NULL, 		"Hangouts", 		0,          True,	  	-1 },
+    { "chats",  		NULL,		NULL,			1 << 7, 		False, 		-1 },
 	{ "music",			NULL, 		NULL,			1 << 6, 		False, 		-1 },
     { "gmail", 			NULL, 		NULL,			1 << 5, 		False, 		-1 },
     { "agenda",			NULL, 		NULL,			1 << 4, 		False, 		-1 },
