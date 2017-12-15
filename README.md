@@ -43,6 +43,17 @@ Make and install
 * Copy dotfiles in $HOME. (backup existings ones).
 * Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh, moc)
 
+Bump version
+------------
+
+```sh
+./bumpversion.sh && ./install
+```
+
+Accept the suggestion (patch increment) or type the new version.
+It will update version in slstatus so it is displayued in status bar.
+Then install 
+
 Troubleshoot
 ------------
 

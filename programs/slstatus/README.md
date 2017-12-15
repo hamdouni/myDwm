@@ -26,6 +26,7 @@ The following information is included:
 - Uptime
 - Volume percentage (OSS/ALSA)
 - WiFi signal percentage and ESSID
+- Echo any string
 
 Multiple entries per function (e.g. multiple batteries) are supported and everything can be reordered and customized via a C header file (similar to other suckless programs).
 

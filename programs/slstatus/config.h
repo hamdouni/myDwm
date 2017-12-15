@@ -37,9 +37,11 @@
 - username (username of current user) [argument: NULL]
 - vol_perc (oss/alsa volume status (see README)) [argument: /dev/mixer]
 - wifi_perc (wifi signal in percent) [argument: wifi card interface name]
-- wifi_essid (wifi essid) [argument: wifi card interface name] */
+- wifi_essid (wifi essid) [argument: wifi card interface name] 
+- echo [argument: string to echo] */
 static const struct arg args[] = {
 	/* function	format        argument */
+	{ echo, "⋮ V%s ", VERSION},
 	{ wifi_essid, "⋮@ %s ", "wlan0"},
 	{ wifi_perc, "%s ", "wlan0"},
 	{ cpu_perc,     "⋮cpu %s ",  NULL },

@@ -54,6 +54,7 @@ static char *ram_perc(void);
 static char *ram_used(void);
 static char *ram_total(void);
 static char *run_command(const char *cmd);
+static char *echo(const char *text);
 static char *swap_free(void);
 static char *swap_perc(void);
 static char *swap_used(void);
@@ -74,6 +75,7 @@ static unsigned short int done;
 static unsigned short int dflag, oflag;
 static Display *dpy;
 
+#include "version.h"
 #include "config.h"
 
 static char *
@@ -456,6 +458,12 @@ run_command(const char *cmd)
 	}
 
 	return smprintf("%s", buf);
+}
+
+static char *
+echo(const char *text)
+{
+	return smprintf("%s", text);
 }
 
 static char *
