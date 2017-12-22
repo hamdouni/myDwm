@@ -2,7 +2,7 @@
 
 /* appearance */
 //static const char font[]            = "-misc-fixed-medium-r-*-*-17-*-*-*-*-*-*-*";
-static const char font[] = "Sans:size=12";
+static const char font[] = "Sans:size=10";
 static const char normbordercolor[] = "#073000"; 
 static const char normbgcolor[]     = "#ededed";
 static const char normfgcolor[]     = "#222222";
