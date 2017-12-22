@@ -1,3 +1,7 @@
+Version 1.0.3:
+ - alias gp push also tags
+ - font 12 -> 10
+
 Version 1.0.2:
  - song title played by mocp in status bar
 
