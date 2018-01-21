@@ -1,3 +1,6 @@
+Version 1.0.5:
+ - put git tags at the end of the git log
+
 Version 1.0.4:
  - fix gp git push with tag
 
