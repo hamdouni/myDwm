@@ -1,3 +1,6 @@
+Version 1.0.6:
+ - fix gh alias not working without double quotes
+
 Version 1.0.5:
  - put git tags at the end of the git log
 
