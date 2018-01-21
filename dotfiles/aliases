@@ -1,6 +1,6 @@
 alias df="df -h"
 alias du="du -h"
-alias gh="git log --graph --pretty='format:%Cblue%h%Creset %ad %Cred%<(8,trunc)%an%Creset%Cgreen%d%Creset %s' --date=short"
+alias gh=git log --graph --pretty='format:%Cblue%h%Creset %ad %Cred%<(8,trunc)%an%Creset %s %Cgreen%d%Creset' --date=short
 alias gp="git push --tags&&git push"
 alias gr="git recall -d 7"
 alias poweroff="sudo poweroff -f"
