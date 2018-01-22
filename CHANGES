@@ -1,3 +1,6 @@
+Version 1.0.7:
+ - gha alias is gh --all
+
 Version 1.0.6:
  - fix gh alias not working without double quotes
 
