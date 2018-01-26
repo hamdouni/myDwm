@@ -1,3 +1,6 @@
+Version 1.0.8:
+ - no persistent dir so code terminal-here can work correctly
+
 Version 1.0.7:
  - gha alias is gh --all
 
