@@ -1,3 +1,7 @@
+Version 1.1.2:
+ - vscode key bindings
+ - add thunar as default file manager
+
 Version 1.1.1:
  - audio launch mocp if not launched
 
