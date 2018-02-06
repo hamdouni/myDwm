@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Simple audio control
+# --------------------
+#
+# Uses amixer and mocp.
+#
+# "+" to raise up
+# "-" to down
+# "m" to mute/unmute
+# "P" to play/pause music
+# "n" next music
+# "p" previous music
+# "i" info song played
+# default shows actual volume
+
+# get volume 
+VOL=$(amixer get Master | awk '/Mono.+/ {print $6=="[off]"?$6:$4}' | tr -d '[]')
+
+case "$1" in
+        +)
+            /usr/bin/amixer sset 'Master' 5%+
+        ;;
+        -)
+            /usr/bin/amixer sset 'Master' 5%-
+        ;;
+        m)
+            if test "$VOL" = "off"; then
+                /usr/bin/amixer sset 'Master' unmute
+            else
+                /usr/bin/amixer sset 'Master' mute
+            fi
+        ;;
+        g)
+            mocp -G
+        ;;
+        n)
+            mocp -f
+        ;;
+        p)
+            mocp -r
+        ;;
+        i)
+            mocp -Q '%song'
+        ;;
+        *)
+            echo "$VOL"
+esac
