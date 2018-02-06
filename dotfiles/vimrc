@@ -1,10 +1,4 @@
 filetype off
-se rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-    Bundle 'gmarik/vundle'
-	Bundle 'fatih/vim-go'
-	Bundle 'vim-airline/vim-airline'
-call vundle#end()
 filetype plugin indent on
 syntax enable 			" Enable syntax highlights
 
