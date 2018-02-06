@@ -1,3 +1,11 @@
+Version 1.1.0:
+ - install missing components
+ - use new audio script + get rid off wifi status
+ - use new audio script
+ - get rid off vundle in vim
+ - install all needed packages
+ - simpler audi script for volume and music
+
 Version 1.0.8:
  - no persistent dir so code terminal-here can work correctly
 
