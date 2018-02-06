@@ -17,6 +17,18 @@
 # get volume 
 VOL=$(amixer get Master | awk '/Mono.+/ {print $6=="[off]"?$6:$4}' | tr -d '[]')
 
+# mocp wrapper
+wmocp()
+{
+    if mocp -i ; then 
+        mocp $*
+    else 
+        mocp -S
+        mocp -p
+    fi
+
+}
+
 case "$1" in
         +)
             /usr/bin/amixer sset 'Master' 5%+
@@ -32,16 +44,16 @@ case "$1" in
             fi
         ;;
         g)
-            mocp -G
+            wmocp -G
         ;;
         n)
-            mocp -f
+            wmocp -f
         ;;
         p)
-            mocp -r
+            wmocp -r
         ;;
         i)
-            mocp -Q '%song'
+            wmocp -Q '%song'
         ;;
         *)
             echo "$VOL"
