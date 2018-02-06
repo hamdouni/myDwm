@@ -1,3 +1,13 @@
+xinit
+dbus-x11
+make
+golang-go
+libx11-dev
+libxinerama-dev
+libxft-dev
+libglib2.0-bin
+vim
+zsh
 disper
 xsettingsd
 blueman
@@ -10,3 +20,6 @@ elementary-icon-theme
 gnome-themes-standard
 chromium-browser
 qpdfview
+libpango1.0-0
+libpangox-1.0-0
+libxslt1.1
