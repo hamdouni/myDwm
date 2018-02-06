@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# create ~/bin if not exists
+if [ ! -e $(dirname $HOME/bin) ]
+then
+    mkdir -p $HOME/bin
+fi
+
+# make and install programs
 cd programs
 for src in $(ls)
 do
@@ -9,8 +16,8 @@ cd ..
 
 for script in $(ls shell)
 do
-    sudo cp shell/$script /usr/bin/
-    sudo chmod a+rx /usr/bin/$script
+    cp shell/$script $HOME/bin/
+    chmod a+rx $HOME/bin/$script
 done
 
 # list of files and destination with : separation
@@ -66,8 +73,25 @@ fc-cache -fv > /dev/null
 xrdb -merge $HOME/.Xresources
 gsettings set org.gnome.desktop.interface monospace-font-name 'Hack 12'
 
+# after installing xfce power manager, set tray icon
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s 1
+
 # install good looking icons for wicd and xfce4-power man
 sudo cp ./assets/wicd-icons/* /usr/share/wicd/icons/hicolor/22x22/status/
 sudo cp ./assets/xfpm/* /usr/share/icons/hicolor/22x22/status
 sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
 
+# install Dropbox
+if [ ! -e $HOME/.dropbox ]
+then
+    wget -O /tmp/db.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb && sudo dpkg -i /tmp/db.deb
+fi
+
+# install oh-my-zsh
+if [ ! -e $HOME/.oh-my-zsh ]
+then
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+fi
+
+# make xterm my default
+sudo update-alternatives --set x-terminal-emulator /usr/bin/xterm
