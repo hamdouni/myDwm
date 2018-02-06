@@ -56,15 +56,15 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "x-terminal-emulator", NULL };
-static const char *voldown[]  = { "pavol", "-", NULL };
-static const char *volup[]    = { "pavol", "+", NULL };
-static const char *volmute[]  = { "pavol","m", NULL };
-static const char *filemanager[] = { "x-file-manager", NULL};
-static const char *trackpadonoff[] = {"trackpadonoff",NULL}; // touche FN+F3
-static const char *prev[] = { "myMocp","-r",NULL};
-static const char *next[] = { "myMocp","-f",NULL};
-static const char *play[] = { "myMocp","-G",NULL};
+static const char *termcmd[]  = { "x-terminal-emulator",NULL };
+static const char *voldown[]  = { "audio","-",NULL };
+static const char *volup[]    = { "audio","+",NULL };
+static const char *volmute[]  = { "audio","m",NULL };
+static const char *filemanager[] = { "x-file-manager",NULL };
+static const char *trackpadonoff[] = {"trackpadonoff",NULL }; // touche FN+F3
+static const char *prev[] = { "audio","p",NULL };
+static const char *next[] = { "audio","n",NULL };
+static const char *play[] = { "audio","g",NULL };
 static const char *browser[] = { "x-www-browser", NULL };
 static const char *slock[] = { "slock", NULL };
 static const char *screenshot[] = { "myScreenshot", NULL };
