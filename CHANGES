@@ -1,3 +1,6 @@
+Version 1.1.1:
+ - audio launch mocp if not launched
+
 Version 1.1.0:
  - install missing components
  - use new audio script + get rid off wifi status
