@@ -1,0 +1,4 @@
+// Placez vos combinaisons de touches dans ce fichier pour remplacer les valeurs par défaut
+[
+    { "key": "shift+[Backquote]", "command": "workbench.action.terminal.toggleTerminal" },
+]
