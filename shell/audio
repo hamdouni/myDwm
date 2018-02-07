@@ -17,18 +17,6 @@
 # get volume 
 VOL=$(amixer get Master | awk '/Mono.+/ {print $6=="[off]"?$6:$4}' | tr -d '[]')
 
-# mocp wrapper
-wmocp()
-{
-    if mocp -i ; then 
-        mocp $*
-    else 
-        mocp -S
-        mocp -p
-    fi
-
-}
-
 case "$1" in
         +)
             /usr/bin/amixer sset 'Master' 5%+
@@ -44,16 +32,25 @@ case "$1" in
             fi
         ;;
         g)
-            wmocp -G
+            # Play music. If server off, run it
+            if mocp -i ; then 
+                mocp -G
+            else 
+                mocp -S
+                mocp -p
+            fi
         ;;
         n)
-            wmocp -f
+            # next
+            mocp -f
         ;;
         p)
-            wmocp -r
+            # previous
+            mocp -r
         ;;
         i)
-            wmocp -Q '%song'
+            # info on played song
+            mocp -Q '%song'
         ;;
         *)
             echo "$VOL"
