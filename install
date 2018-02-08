@@ -99,3 +99,4 @@ sudo update-alternatives --set x-terminal-emulator /usr/bin/xterm
 # make thunar default file manager
 sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
 sudo update-alternatives --set x-file-manager /usr/bin/thunar
+xdg-mime default Thunar.desktop inode/directory
