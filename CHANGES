@@ -1,3 +1,6 @@
+Version 1.1.4:
+ - add thunar as default mime for opening directory
+
 Version 1.1.3:
  - don't play music at boot time
 
