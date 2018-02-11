@@ -1,3 +1,7 @@
+Version 1.1.5:
+ - add missing apps, install apps first, ...
+ - Create LICENSE
+
 Version 1.1.4:
  - add thunar as default mime for opening directory
 
