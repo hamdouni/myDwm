@@ -24,3 +24,5 @@ libpango1.0-0
 libpangox-1.0-0
 libxslt1.1
 thunar
+xserver-xorg-input-synaptics
+numlockx
