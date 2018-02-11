@@ -1,3 +1,6 @@
+Version 1.1.6:
+ - post install scripts
+
 Version 1.1.5:
  - add missing apps, install apps first, ...
  - Create LICENSE
