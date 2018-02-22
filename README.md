@@ -1,5 +1,8 @@
-Based on
---------
+# MyDWM, a customized tiled window manager for Debian based Linux.
+
+![screenshot](assets/screenshot.png)
+
+## Based on
 
 * [DWM 6.0](http://dwm.suckless.org/)
 * [Dmenu 4.5](http://tools.suckless.org/dmenu/)
@@ -9,8 +12,7 @@ Based on
 * [slock 1.1](http://tools.suckless.org/slock/)
 * [slstatus](https://github.com/drkhsh/slstatus)
 
-Default configuration
----------------------
+## Default configuration
 
 * Prefix path = /usr (need root access to install)
 * Preinstalled patches : systray and xft
@@ -31,8 +33,7 @@ Default configuration
 * Multimedia keys pilot moc "music on console" (shell script myMocp)
 * Volume keys pilot PulseAudio (shell script pavol)
 
-Make and install
-----------------
+## Make and install
 
 ```sh
     ./install
@@ -43,8 +44,7 @@ Make and install
 * Copy dotfiles in $HOME. (backup existings ones).
 * Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh, moc)
 
-Bump version
-------------
+## Bump version
 
 ```sh
 ./bumpversion.sh && ./install
@@ -54,8 +54,7 @@ Accept the suggestion (patch increment) or type the new version.
 It will update version in slstatus so it is displayued in status bar.
 Then install 
 
-Troubleshoot
-------------
+## Troubleshoot
 
 Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then do the symbolic link below :
 
@@ -63,8 +62,7 @@ Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding 
         sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
 ```
 
-How to install new alternative "x-file-manager" ?
----------------------------------------------------
+## How to install new alternative "x-file-manager" ?
 
 For example, to install thunar as an alternative for x-file-manager, do the below command :
 
@@ -79,8 +77,7 @@ For example, to install thunar as an alternative for x-file-manager, do the belo
         gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
 
-How to set the same font in DWM/Xft and in GTK apps ?
-------------------------------------------------------------
+## How to set the same font in DWM/Xft and in GTK apps ?
 
 For example, if we want the 'Ubuntu Mono' font at size 12 :
 
