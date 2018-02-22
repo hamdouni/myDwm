@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for app in $(cat apps.list)
+for app in $(cat config/apps.list)
 do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
@@ -35,7 +35,7 @@ done
 
 # list of files and destination with : separation
 oldIFS=$IFS
-for dot in $(cat configs.list)
+for dot in $(cat config/configs.list)
 do
     IFS=':' 
     set -- $dot
@@ -55,7 +55,7 @@ IFS=$oldIFS
 
 # list of webapps tag:filename:url
 oldIFS=$IFS
-for dot in $(cat webapps.list)
+for dot in $(cat config/webapps.list)
 do
     IFS=';' 
     set -- $dot
