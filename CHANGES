@@ -1,3 +1,12 @@
+Version 1.1.9:
+ - add path in vscode title window
+ - add screenshot
+ - markdown readme
+ - doc on config folder usage
+ - new config folder with all config files
+ - add imagemagick for myScreenshot
+ - disable cc warnings
+
 Version 1.1.8:
  - dc alias for docker-compose
 
