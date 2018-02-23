@@ -23,5 +23,6 @@
     "extensions.ignoreRecommendations": false,
     "explorer.openEditors.visible": 0,
     "git.enableSmartCommit": true,
-    "editor.scrollbar.verticalScrollbarSize": 20
+    "editor.scrollbar.verticalScrollbarSize": 20,
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}"
 }
