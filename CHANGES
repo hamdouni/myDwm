@@ -1,3 +1,6 @@
+Version 1.1.10:
+ - vscode shortcut CTRL+² focus to integrated terminal (CTRL+& focus to editor)
+
 Version 1.1.9:
  - add path in vscode title window
  - add screenshot
