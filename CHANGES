@@ -1,3 +1,6 @@
+Version 1.1.11:
+ - Add xinput so trackpadoff can work with xps15
+
 Version 1.1.10:
  - vscode shortcut CTRL+² focus to integrated terminal (CTRL+& focus to editor)
 
