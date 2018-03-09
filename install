@@ -53,6 +53,19 @@ do
 done
 IFS=$oldIFS
 
+# list of secured config files and destination with : separation
+# assume directories and files already existed so just overide them with sudo
+oldIFS=$IFS
+for dot in $(cat config/configs-secured.list)
+do
+    IFS=':' 
+    set -- $dot
+    file=$1
+    dest=$2
+    sudo cp ./dotfiles/$file $dest
+done
+IFS=$oldIFS
+
 # list of webapps tag:filename:url
 oldIFS=$IFS
 for dot in $(cat config/webapps.list)
