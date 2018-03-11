@@ -11,3 +11,5 @@ vscodebindings:.config/Code/User/keybindings.json
 mocp:.moc/config
 gtk.css:.config/gtk-3.0/gtk.css
 gtkrc:.config/gtk-2.0/gtkrc
+Trolltech.conf:.config/Trolltech.conf
+
