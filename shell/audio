@@ -25,11 +25,7 @@ case "$1" in
             /usr/bin/amixer sset 'Master' 5%-
         ;;
         m)
-            if test "$VOL" = "off"; then
-                /usr/bin/amixer sset 'Master' unmute
-            else
-                /usr/bin/amixer sset 'Master' mute
-            fi
+            /usr/bin/amixer -D pulse sset Master toggle
         ;;
         g)
             # Play music. If server off, run it
