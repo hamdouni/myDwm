@@ -1,3 +1,7 @@
+Version 1.1.13:
+ - Add Gopher Slack WebApp
+ - New way to mute sound with pulse
+
 Version 1.1.12:
  - QT and GTK look the same (nearly)
  - Adopt Git new behaviour for default push
