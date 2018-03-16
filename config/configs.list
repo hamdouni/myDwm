@@ -12,4 +12,4 @@ mocp:.moc/config
 gtk.css:.config/gtk-3.0/gtk.css
 gtkrc:.config/gtk-2.0/gtkrc
 Trolltech.conf:.config/Trolltech.conf
-
+sshconfig:.ssh/config
