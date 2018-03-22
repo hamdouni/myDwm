@@ -1,19 +1,20 @@
 #!/bin/sh
 
-# activate dual screen, disposition and brightness depends on hostname
+# screen brightness
+bperc="20" # brightness percent
+bmax=`xfpm-power-backlight-helper --get-max-brightness`
+bright=`expr $bmax \* $bperc / 100`
+sudo pkexec xfpm-power-backlight-helper --set-brightness $bright 
+
+# disposition
 computer=$(hostname)
 disposition="bottom"                # default
-brightness="40"                     # default
 case $computer in
-    xps15) disposition="right"
-           brightness="400" ;;
-    xps13) disposition="bottom"
-           brightness="40"  ;;
+    xps15) disposition="right";;
+    xps13) disposition="bottom";;
 esac
-# disposition
 disper -e -t $disposition &
-# screen brightness
-sudo pkexec xfpm-power-backlight-helper --set-brightness $brightness 
+
 # dwm status bar
 slstatus -d
 # deactivate screen blanking
