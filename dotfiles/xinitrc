@@ -37,7 +37,7 @@ xrdb -load ~/.Xresources
 # background
 feh --bg-scale ~/Dropbox/public/orion-nebula-3840x2160-hubble-space-telescope-nasa-hd-5k-1933.jpg
 # trackpad less sensitive
-synclient MaxTapTime=0 PalmDetect=1
+synclient PalmDetect=1
 # bluetooth don't sleep
 sudo hciconfig hci0 lp rswitch,hold,park
 # make notification appears on focused screen
