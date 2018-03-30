@@ -1,3 +1,7 @@
+Version 1.1.18:
+ - Make pip bins usable
+ - Permit trackpad tap
+
 Version 1.1.17:
  - Raise contrast for selected tab
 
