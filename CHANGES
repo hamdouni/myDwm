@@ -1,3 +1,6 @@
+Version 1.1.19:
+ - Deactivate trackpad click when typing
+
 Version 1.1.18:
  - Make pip bins usable
  - Permit trackpad tap
