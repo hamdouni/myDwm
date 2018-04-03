@@ -36,8 +36,8 @@ xfce4-power-manager &
 xrdb -load ~/.Xresources
 # background
 feh --bg-scale ~/Dropbox/public/orion-nebula-3840x2160-hubble-space-telescope-nasa-hd-5k-1933.jpg
-# trackpad less sensitive
-synclient PalmDetect=1
+# trackpad less sensitive : deactivate click when typing
+syndaemon -t -K -i 0.5 -R -d 
 # bluetooth don't sleep
 sudo hciconfig hci0 lp rswitch,hold,park
 # make notification appears on focused screen
