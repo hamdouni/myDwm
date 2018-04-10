@@ -42,5 +42,7 @@ syndaemon -t -K -i 0.5 -R -d
 sudo hciconfig hci0 lp rswitch,hold,park
 # make notification appears on focused screen
 gsettings set com.canonical.notify-osd multihead-mode focus-follow
+# launch sound
+/usr/bin/start-pulseaudio-x11 &
 # launch dwm
 exec dbus-launch dwm-loop 2> ~/.xsession-errors
