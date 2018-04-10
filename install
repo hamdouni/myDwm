@@ -5,7 +5,7 @@ do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
     then
-        sudo apt install -y "$app"
+        sudo apt install -y --no-install-recommends "$app"
     fi
 done
 
