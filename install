@@ -110,8 +110,8 @@ then
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
 
-# make xterm my default
-sudo update-alternatives --set x-terminal-emulator /usr/bin/xterm
+# make terminology my default
+sudo update-alternatives --set x-terminal-emulator /usr/bin/terminology
 
 # make thunar default file manager
 sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
