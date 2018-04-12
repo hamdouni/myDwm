@@ -1,3 +1,6 @@
+Version 1.1.21:
+ - Make Terminology my defaut x-terminal
+
 Version 1.1.20:
  - Launch audio
  - Install package without recommends + fix dependancies
