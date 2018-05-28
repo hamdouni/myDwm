@@ -15,3 +15,4 @@ alias vbls='vb list vms'
 alias vbps='vb list runningvms'
 alias dps='docker ps --format "table {{.Names}}	{{.Status}}	{{.Ports}}"'
 alias dc="docker-compose"
+alias t="~/Dropbox/todo/todo.sh"
