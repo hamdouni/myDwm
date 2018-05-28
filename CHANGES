@@ -1,3 +1,7 @@
+Version 1.1.23:
+ - Make t an alias to todo.sh
+ - Add dunst config (notification daemon)
+
 Version 1.1.22:
  - Add thunar archive plugin
 
