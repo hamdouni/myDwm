@@ -42,6 +42,9 @@ syndaemon -t -K -i 0.5 -R -d
 sudo hciconfig hci0 lp rswitch,hold,park
 # make notification appears on focused screen
 gsettings set com.canonical.notify-osd multihead-mode focus-follow
+# big mouse on gtk apps
+gsettings set org.gnome.desktop.interface cursor-theme 'whiteglass'
+gsettings set org.gnome.desktop.interface cursor-size 48
 # launch sound
 /usr/bin/start-pulseaudio-x11 &
 # launch dwm
