@@ -8,12 +8,10 @@ sudo pkexec xfpm-power-backlight-helper --set-brightness $bright
 
 # disposition
 computer=$(hostname)
-disposition="bottom"                # default
 case $computer in
-    xps15) disposition="right";;
-    xps13) disposition="bottom";;
+    xps15) xrandr --output DP-2-3 --right-of DP-1-1 --output DP-1-1 --right-of eDP-1 ;;
+    xps13) ;;
 esac
-disper -e -t $disposition &
 
 # dwm status bar
 slstatus -d

@@ -8,7 +8,6 @@ libxft-dev
 libglib2.0-bin
 vim
 zsh
-disper
 xsettingsd
 blueman
 wicd-gtk

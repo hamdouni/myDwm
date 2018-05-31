@@ -42,7 +42,7 @@
 * Makes and installs the programs in /usr/bin.
 * Copy shell scripts in /usr/bin. (dwm-loop, pavol)
 * Copy dotfiles in $HOME. (backup existings ones).
-* Apt-install other apps (disper, xsettingsd, blueman, wicd-gtk, feh, moc)
+* Apt-install other apps (xsettingsd, blueman, wicd-gtk, feh, moc)
 
 ## Bump version
 
