@@ -1,5 +1,6 @@
 Version 1.1.23:
  - Use a big mouse cursor
+ - Make t an alias to todo.sh
  - Add dunst config (notification daemon)
 
 Version 1.1.22:
