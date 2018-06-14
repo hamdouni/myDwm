@@ -9,7 +9,7 @@ sudo pkexec xfpm-power-backlight-helper --set-brightness $bright
 # disposition
 computer=$(hostname)
 case $computer in
-    xps15) xrandr --output eDP-1 --auto --pos 0x0 --output DP-2-1 --primary --auto --right-of eDP-1 --output DP-1-3 --auto --right-of DP-2-1 ;;
+    xps15) xrandr --output eDP-1 --auto --pos 0x0 --output HDMI-1 --primary --auto --right-of eDP-1 ;;
     xps13) ;;
 esac
 
