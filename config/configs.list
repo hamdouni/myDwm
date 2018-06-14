@@ -14,3 +14,4 @@ gtkrc:.config/gtk-2.0/gtkrc
 Trolltech.conf:.config/Trolltech.conf
 sshconfig:.ssh/config
 dunstrc:.config/dunst/dunstrc
+google-chrome-new-window.desktop:.local/share/applications/
