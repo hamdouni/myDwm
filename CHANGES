@@ -1,3 +1,11 @@
+Version 1.2.0:
+ - Stop mouse iniertia
+ - Silent make for dwm 6.1
+ - Upgrade DWM to 6.1
+ - Fix open chrome in new window
+ - Open chrome in new window for links inside other apps
+ - Reconfigure for 2 screens at desk
+
 Version 1.1.25:
  - Adapt 3 screens configuration
 
