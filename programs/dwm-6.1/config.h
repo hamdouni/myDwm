@@ -1,34 +1,47 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-//static const char font[]            = "-misc-fixed-medium-r-*-*-17-*-*-*-*-*-*-*";
-static const char font[] = "Sans:size=10";
-static const char normbordercolor[] = "#073000"; 
-static const char normbgcolor[]     = "#ededed";
-static const char normfgcolor[]     = "#222222";
-static const char selbordercolor[]  = "#d7979f";
-static const char selbgcolor[]      = "#222222";
-static const char selfgcolor[]      = "#ededed";
-static const unsigned int borderpx  = 5;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int borderpx = 4;        /* border pixel of windows */
+static const unsigned int snap     = 32;       /* snap pixel */
+static const int showbar           = 1;        /* 0 means no bar */
+static const int topbar            = 1;        /* 0 means bottom bar */
+static const char *fonts[]         = { "Sans:size=10" };
+static const char dmenufont[]      = "Sans:size=10";
+static const char normbgcol[]      = "#ededed";
+static const char normfgcol[]      = "#222222";
+static const char normborder[]     = "#222222";
+static const char selborder[]      = "#d7979f";
+static const char selbgcol[]       = "#222222";
+static const char selfgcol[]       = "#ededed";
+static const char *colors[][3]     = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { normfgcol, normbgcol, normborder },
+	[SchemeSel]  = { selfgcol,  selbgcol,  selborder  },
+};
+static const Bool showsystray = True;           /* False means no systray */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const Bool showsystray       = True;     /* False means no systray */
-static const Bool showbar           = True;     /* False means no bar */
-static const Bool topbar            = True;     /* False means bottom bar */
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 
 /* tagging */
 static const char *tags[] = { "1_main_one", "2_main_two", "3_code", "4_backlog", "5_org", "6_com", "7_media" };
 
 static const Rule rules[] = {
-	/* class      		instance    title       	tags mask     isfloating	monitor */
-    { "Wicd-client.py", NULL, 		NULL,       		0,          True,	  	-1 },
-    { "Update-manager", NULL, 		NULL,       		0,          True,	  	-1 },
+	/* xprop(1):
+	 *	WM_CLASS(STRING) = instance, class
+	 *	WM_NAME(STRING) = title
+	 */
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Wicd-client.py", NULL, 		NULL,       		0,          True,	  	-1 },
+	{ "Update-manager", NULL, 		NULL,       		0,          True,	  	-1 },
 	{ NULL,             NULL, 		"Hangouts", 		0,          True,	  	-1 },
 	{ "media",			NULL, 		NULL,			1 << 6, 		False, 		-1 },
-    { "com", 			NULL, 		NULL,			1 << 5, 		False, 		-1 },
-    { "org",			NULL, 		NULL,			1 << 4, 		False, 		-1 },
-    { "backlog", 		NULL, 		NULL,	 		1 << 3, 		False, 		-1 },
-    { "Code", 			"code", 	NULL, 			1 << 2, 		False, 		-1 },
+	{ "com", 			NULL, 		NULL,			1 << 5, 		False, 		-1 },
+	{ "org",			NULL, 		NULL,			1 << 4, 		False, 		-1 },
+	{ "backlog", 		NULL, 		NULL,	 		1 << 3, 		False, 		-1 },
+	{ "Code", 			"code", 	NULL, 			1 << 2, 		False, 		-1 },
 };
 
 /* layout(s) */
@@ -55,7 +68,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
 static const char *termcmd[]  = { "x-terminal-emulator",NULL };
 static const char *voldown[]  = { "audio","-",NULL };
 static const char *volup[]    = { "audio","+",NULL };
@@ -115,11 +129,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_F8,                      7)
 	TAGKEYS(                        XK_F9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-
 };
 
 /* button definitions */
-/* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
+/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
