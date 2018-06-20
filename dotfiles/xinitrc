@@ -36,6 +36,8 @@ xrdb -load ~/.Xresources
 feh --bg-scale ~/Dropbox/public/orion-nebula-3840x2160-hubble-space-telescope-nasa-hd-5k-1933.jpg
 # trackpad less sensitive : deactivate click when typing
 syndaemon -t -K -i 0.5 -R -d 
+# stop mouse inertia
+xinput set-prop "12" "Synaptics Coasting Speed" 20.0 50000.0
 # bluetooth don't sleep
 sudo hciconfig hci0 lp rswitch,hold,park
 # make notification appears on focused screen
