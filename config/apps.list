@@ -28,5 +28,7 @@ thunar-archive-plugin
 xserver-xorg-input-synaptics
 numlockx
 imagemagick
+slop
+xclip
 xinput
 terminology

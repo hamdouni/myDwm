@@ -29,7 +29,7 @@
   * win + TAB           : focus next area
   * win + shift + TAB   : focus previous area
   * win + shit + c      : close window
-  * win + PRINTSCREEN   : select a window to screenshot in file in /tmp (shell script myScreenshot)
+  * PRINTSCREEN         : select an area to screenshot and create a png in home and copy to clipboard (shell script myScreenshot)
 * Multimedia keys pilot moc "music on console" (shell script myMocp)
 * Volume keys pilot PulseAudio (shell script pavol)
 

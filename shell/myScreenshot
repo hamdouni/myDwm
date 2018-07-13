@@ -1,3 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-import /tmp/screenshot_$(date +%F_%H%M%S_%N).png
+# select an area, create a png, copy to clipboard
+
+target=~/screenshot_$(date +%F_%H%M%S_%N).png
+slop=$(slop -kf "%g") || exit 1 
+read -r params < <(echo $slop) 
+import -window root -crop $params $target 
+xclip -selection clipboard -target image/png -i < $target
