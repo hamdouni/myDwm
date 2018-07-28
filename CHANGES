@@ -1,3 +1,7 @@
+Version 1.2.2:
+ - Uninstaller + replace thunar with pcmanfm
+ - Path to go bin
+
 Version 1.2.1:
  - Screenshot an area and copy to clipboard with PrintScr key
 
