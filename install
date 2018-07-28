@@ -1,11 +1,22 @@
 #!/bin/sh
 
+# uninstall unwanted apps
+for app in $(cat config/unapps.list)
+do
+    res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app 2>/dev/null)
+    if [ "$res" = "installed" ]
+    then
+        sudo apt purge -y "$app" >/dev/null 2>&1 
+    fi
+done
+
+# install wanted apps
 for app in $(cat config/apps.list)
 do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
     then
-        sudo apt install -y --no-install-recommends "$app"
+        sudo apt install -y --no-install-recommends "$app" >/dev/null 2>&1
     fi
 done
 
@@ -23,7 +34,9 @@ done
 cd programs
 for src in $(ls)
 do
-    cd $src && make -s && sudo make -s clean install && make -s clean && cd ..
+    cd $src 
+    make -s && sudo make -s install && make -s clean 
+    cd ..
 done
 cd ..
 
@@ -101,7 +114,7 @@ sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
 # install Dropbox
 if [ ! -e $HOME/.dropbox ]
 then
-    wget -O /tmp/db.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb && sudo dpkg -i /tmp/db.deb
+    wget -O /tmp/db.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb && sudo dpkg -i /tmp/db.deb  >/dev/null 2>&1
 fi
 
 # install oh-my-zsh
@@ -111,9 +124,10 @@ then
 fi
 
 # make terminology my default
-sudo update-alternatives --set x-terminal-emulator /usr/bin/terminology
+sudo update-alternatives --quiet --set x-terminal-emulator /usr/bin/terminology
 
-# make thunar default file manager
-sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
-sudo update-alternatives --set x-file-manager /usr/bin/thunar
-xdg-mime default Thunar.desktop inode/directory
+# make pcmanfm default file manager
+sudo update-alternatives --quiet --remove-all x-file-manager 2>/dev/null
+sudo update-alternatives --quiet --install /usr/bin/x-file-manager x-file-manager /usr/bin/pcmanfm 1000
+sudo update-alternatives --quiet --set x-file-manager /usr/bin/pcmanfm
+xdg-mime default Pcmanfm.desktop inode/directory

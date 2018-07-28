@@ -23,8 +23,7 @@ qpdfview
 libpango1.0-0
 libpangox-1.0-0
 libxslt1.1
-thunar
-thunar-archive-plugin
+pcmanfm
 xserver-xorg-input-synaptics
 numlockx
 imagemagick

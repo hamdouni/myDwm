@@ -8,7 +8,7 @@ all:
 clean:
 	rm -f cputemp
 
-install: all
+install:
 	mkdir -p ${PREFIX}/bin
 	cp -f cputemp ${PREFIX}/bin
 	chmod 755 ${PREFIX}/bin/cputemp
