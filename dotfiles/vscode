@@ -9,7 +9,7 @@
         "*.r": "red"
     },
     "workbench.sideBar.location": "left",
-    "editor.fontFamily": "Hack, monospace",
+    "editor.fontFamily": "Liga Hack, monospace",
     "editor.fontSize": 16,
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
@@ -25,5 +25,5 @@
     "git.enableSmartCommit": true,
     "editor.scrollbar.verticalScrollbarSize": 20,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
 }
