@@ -2,7 +2,6 @@
 {
     "editor.minimap.enabled": true,
     "editor.mouseWheelZoom": true,
-    "go.formatOnSave": true,
     "go.formatTool": "goimports",
     "files.associations": {
         "*.rsp": "html",
@@ -23,7 +22,9 @@
     "extensions.ignoreRecommendations": false,
     "explorer.openEditors.visible": 0,
     "git.enableSmartCommit": true,
-    "editor.scrollbar.verticalScrollbarSize": 20,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     "editor.fontLigatures": true,
+    "breadcrumbs.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
 }
