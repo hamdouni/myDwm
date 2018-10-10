@@ -27,4 +27,5 @@
     "breadcrumbs.enabled": true,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+    "terminal.integrated.fontFamily": "Liga Hack",
 }
