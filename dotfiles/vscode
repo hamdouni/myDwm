@@ -19,7 +19,7 @@
     "typescript.disableAutomaticTypeAcquisition": true,
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "workbench.startupEditor": "newUntitledFile",
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true,
     "explorer.openEditors.visible": 0,
     "git.enableSmartCommit": true,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
