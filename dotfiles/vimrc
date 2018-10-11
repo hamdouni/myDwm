@@ -9,7 +9,7 @@ se mouse=a
 se clipboard=unnamedplus
 se laststatus=2
 se cursorline
-se gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+se gfn=DejaVu\ Sans\ Mono\ 12
 se ttyfast 			    " Faster redraw
 se shortmess+=I 		" No intro when starting Vim
 se smartindent 		    " Smart... indent
