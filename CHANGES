@@ -1,3 +1,7 @@
+Version 1.2.7:
+ - Add mime-support to install deb package in terminal
+ - Fix Powerline font for vscode integrated terminal
+
 Version 1.2.6:
  - Fix vscode config
 
