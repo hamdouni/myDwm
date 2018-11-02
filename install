@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# install others repos
+./pre-install/add-repos.sh >/dev/null 2>&1
+
 # uninstall unwanted apps
 for app in $(cat config/unapps.list)
 do
@@ -20,6 +23,8 @@ do
     fi
 done
 
+# some configuration after install
+./post-install/configure.sh
 
 # create dirs if not exist
 for d in bin .local/share/applications

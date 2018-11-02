@@ -1,12 +1,17 @@
+apt-transport-https
 blueman
+ca-certificates curl 
 chromium-browser
+code
 dbus-x11
+docker-ce 
 dunst
 elementary-icon-theme
 feh
 firefox
 gnome-themes-standard
 imagemagick
+keepassxc
 libglib2.0-bin
 libpango1.0-0
 libpangox-1.0-0
@@ -21,6 +26,7 @@ numlockx
 pcmanfm
 qpdfview
 slop
+software-properties-common
 terminology
 vim
 wicd-gtk
