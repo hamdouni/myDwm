@@ -88,7 +88,7 @@ do
     tag=$1
     filename=$2
     url=$3
-    echo "#!/bin/sh\nchromium-browser --disable-background-networking --class='$tag' -user-data-dir=$HOME/.$tag --app='$url'" > $HOME/bin/$filename
+    echo "#!/bin/sh\nchromium-browser --disable-local-storage --disable-background-networking --class='$tag' -user-data-dir=$HOME/.webapps/$tag --app='$url'" > $HOME/bin/$filename
     chmod a+x $HOME/bin/$filename
 done
 IFS=$oldIFS
