@@ -32,3 +32,6 @@ fi
 
 # CD to the previous folder
 cd $OLDPWD
+
+# Horizontal rule in zsh prompt (cf http://brahim.hamdouni.com/horizontal-rule-in-zsh-prompt/)
+PS1=$'%U${(r:$COLUMNS:: :)}%u'$PS1
