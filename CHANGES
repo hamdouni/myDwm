@@ -1,3 +1,14 @@
+Version 1.2.8:
+ - Add horizontal rule in zsh prompt
+ - Move post configuration to the right place
+ - Simplify the way to install dev tools
+ - Integrate Compose as distribuable binary
+ - Make Firefox my default browser
+ - Install web apps storage files in folder .webapps
+ - Install firefox and order apps list
+ - Fix GVim font
+ - Ignore VS Code Extension Recommendations
+
 Version 1.2.7:
  - Add mime-support to install deb package in terminal
  - Fix Powerline font for vscode integrated terminal
