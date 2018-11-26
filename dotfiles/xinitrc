@@ -6,11 +6,15 @@ bmax=`xfpm-power-backlight-helper --get-max-brightness`
 bright=`expr $bmax \* $bperc / 100`
 sudo pkexec xfpm-power-backlight-helper --set-brightness $bright 
 
+# get the other connected monitor (not the internal)
+other=`xrandr |grep " connected" | awk '{print $1}' | grep -v 'eDP-1\|^$i'`
+xrandr --output $other --off
+
 # disposition
 computer=$(hostname)
 case $computer in
-    xps15) xrandr --output eDP-1 --auto --pos 0x0 --output HDMI-1 --primary --auto --right-of eDP-1 ;;
-    xps13) ;;
+    xps15) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --right-of eDP-1 ;;
+    xps13) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --above eDP-1 ;;
 esac
 
 # dwm status bar
