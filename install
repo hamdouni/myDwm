@@ -111,8 +111,7 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Hack 12'
 # after installing xfce power manager, set tray icon
 xfconf-query -n -t int -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s 1
 
-# install good looking icons for wicd and xfce4-power man
-sudo cp ./assets/wicd-icons/* /usr/share/wicd/icons/hicolor/22x22/status/
+# install good looking icons
 sudo cp ./assets/xfpm/* /usr/share/icons/hicolor/22x22/status
 sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
 
