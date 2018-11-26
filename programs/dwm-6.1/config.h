@@ -24,7 +24,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 
 /* tagging */
-static const char *tags[] = { "1_main_one", "2_main_two", "3_code", "4_backlog", "5_org", "6_com", "7_media" };
+static const char *tags[] = { "1_main_one", "2_main_two", "3_main_three", "4_backlog", "5_org", "6_com", "7_media" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -40,7 +40,6 @@ static const Rule rules[] = {
 	{ "com", 			NULL, 		NULL,			1 << 5, 		False, 		-1 },
 	{ "org",			NULL, 		NULL,			1 << 4, 		False, 		-1 },
 	{ "backlog", 		NULL, 		NULL,	 		1 << 3, 		False, 		-1 },
-	{ "Code", 			"code", 	NULL, 			1 << 2, 		False, 		-1 },
 };
 
 /* layout(s) */
