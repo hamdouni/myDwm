@@ -1,55 +1,59 @@
 #!/bin/sh
 
-# screen brightness
-bperc="20" # brightness percent
+####################### GLOBAL VAR
+computer=$(hostname)    
+
+####################### SCREEN
+
+# Brightness
+bperc="20" # percent
 bmax=`xfpm-power-backlight-helper --get-max-brightness`
 bright=`expr $bmax \* $bperc / 100`
 sudo pkexec xfpm-power-backlight-helper --set-brightness $bright 
 
-# get the other connected monitor (not the internal)
+# Disposition
 other=`xrandr |grep " connected" | awk '{print $1}' | grep -v 'eDP-1\|^$i'`
 xrandr --output $other --off
-
-# disposition
-computer=$(hostname)
 case $computer in
     xps15) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --right-of eDP-1 ;;
     xps13) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --above eDP-1 ;;
 esac
 
-# dwm status bar
-slstatus -d
-# deactivate screen blanking
+# Blanking disabled
 xset s off
 xset s 0 0
 xset s noblank
 xset -dpms
-# french keyboard
-setxkbmap fr &
-# numlock on
-numlockx &
-# utilities
-xsettingsd &
-blueman-applet &
-dropbox start &
-wicd-client -t &
-xfce4-power-manager &
-# x resources
-xrdb -load ~/.Xresources
-# background
+
+# Background
 feh --bg-scale ~/Dropbox/public/orion-nebula-3840x2160-hubble-space-telescope-nasa-hd-5k-1933.jpg
-# trackpad less sensitive : deactivate click when typing
-syndaemon -t -K -i 0.5 -R -d 
-# stop mouse inertia
-xinput set-prop "12" "Synaptics Coasting Speed" 20.0 50000.0
-# bluetooth don't sleep
-sudo hciconfig hci0 lp rswitch,hold,park
-# make notification appears on focused screen
+
+# Notification on focused screen
 gsettings set com.canonical.notify-osd multihead-mode focus-follow
-# big mouse on gtk apps
-gsettings set org.gnome.desktop.interface cursor-theme 'whiteglass'
-gsettings set org.gnome.desktop.interface cursor-size 48
-# launch sound
-/usr/bin/start-pulseaudio-x11 &
-# launch dwm
+
+####################### MOUSE/KEYBOARD
+
+syndaemon -t -K -i 0.5 -R -d                                        # trackpad less sensitive : deactivate click when typing
+xinput set-prop "12" "Synaptics Coasting Speed" 20.0 50000.0        # stop mouse inertia
+gsettings set org.gnome.desktop.interface cursor-theme 'whiteglass' # mouse cursor
+gsettings set org.gnome.desktop.interface cursor-size 48            # big mouse on gtk apps
+setxkbmap fr &                                                      # french keyboard
+numlockx &                                                          # numlock on
+
+####################### BLUETOOTH
+
+blueman-applet &                            # tray icon
+sudo hciconfig hci0 lp rswitch,hold,park    # bluetooth don't sleep
+
+####################### UTILITIES
+
+slstatus -d                     # dwm status bar
+xsettingsd &                    # config server
+dropbox start &                 # dropbox
+xfce4-power-manager &           # powermanagement
+xrdb -load ~/.Xresources        # x resources
+/usr/bin/start-pulseaudio-x11 & # sound server
+
+####################### LAUNCH DWM
+
 exec dbus-launch dwm-loop 2> ~/.xsession-errors
