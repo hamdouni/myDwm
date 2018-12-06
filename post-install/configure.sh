@@ -21,3 +21,13 @@ xdg-mime default Pcmanfm.desktop inode/directory
 sudo update-alternatives --quiet --set x-www-browser /usr/bin/firefox
 sudo update-alternatives --quiet --set gnome-www-browser /usr/bin/firefox
 xdg-settings set default-web-browser firefox.desktop
+
+# default path for X Desktop protocol
+xdg-user-dirs-update --set DESKTOP $HOME
+xdg-user-dirs-update --set DOWNLOAD $HOME
+xdg-user-dirs-update --set TEMPLATES $HOME
+xdg-user-dirs-update --set PUBLICSHARE $HOME
+xdg-user-dirs-update --set DOCUMENTS $HOME
+xdg-user-dirs-update --set MUSIC $HOME
+xdg-user-dirs-update --set PICTURES $HOME
+xdg-user-dirs-update --set VIDEOS $HOME
