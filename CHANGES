@@ -1,3 +1,11 @@
+Version 1.2.9:
+ - Defaults X Desktop paths
+ - VS Code appears here (not in dedicated tab)
+ - Remove wicd
+ - Organize xinitrc
+ - Configure dual monitor for xps13
+ - terminology, pcmanfm, firefox as default
+
 Version 1.2.8:
  - Add horizontal rule in zsh prompt
  - Move post configuration to the right place
