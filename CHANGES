@@ -1,3 +1,6 @@
+Version 1.2.10:
+ - VS Code auto guess files encoding
+
 Version 1.2.9:
  - Defaults X Desktop paths
  - VS Code appears here (not in dedicated tab)
