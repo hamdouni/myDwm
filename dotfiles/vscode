@@ -28,4 +28,5 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "terminal.integrated.fontFamily": "Liga Hack",
+    "files.autoGuessEncoding": true,
 }
