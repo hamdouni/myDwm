@@ -3,7 +3,7 @@
 # Simple audio control
 # --------------------
 #
-# Uses amixer and mocp.
+# Uses pulseaudio and mocp.
 #
 # "+" to raise up
 # "-" to down
@@ -19,13 +19,13 @@ VOL=$(amixer get Master | awk '/Mono.+/ {print $6=="[off]"?$6:$4}' | tr -d '[]')
 
 case "$1" in
         +)
-            /usr/bin/amixer sset 'Master' 5%+
+            pactl set-sink-volume @DEFAULT_SINK@ +5%
         ;;
         -)
-            /usr/bin/amixer sset 'Master' 5%-
+            pactl set-sink-volume @DEFAULT_SINK@ -5%
         ;;
         m)
-            /usr/bin/amixer -D pulse sset Master toggle
+            pactl set-sink-mute @DEFAULT_SINK@ toggle
         ;;
         g)
             # Play music. If server off, run it
