@@ -33,8 +33,8 @@ gsettings set com.canonical.notify-osd multihead-mode focus-follow
 
 ####################### MOUSE/KEYBOARD
 
-syndaemon -t -K -i 0.5 -R -d                                        # trackpad less sensitive : deactivate click when typing
-xinput set-prop "12" "Synaptics Coasting Speed" 20.0 50000.0        # stop mouse inertia
+xinput set-prop "12" "libinput Disable While Typing Enabled" 1      # disable touchpad while typing
+xinput set-prop "12" "libinput Tapping Enabled" 1                   # enable tap as click
 gsettings set org.gnome.desktop.interface cursor-theme 'whiteglass' # mouse cursor
 gsettings set org.gnome.desktop.interface cursor-size 48            # big mouse on gtk apps
 setxkbmap fr &                                                      # french keyboard
