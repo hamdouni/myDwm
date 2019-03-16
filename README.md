@@ -51,12 +51,12 @@
 ```
 
 Accept the suggestion (patch increment) or type the new version.
-It will update version in slstatus so it is displayued in status bar.
-Then install 
+It will update version in slstatus so it is displayed in status bar.
+Then install.
 
 ## Troubleshoot
 
-Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then do the symbolic link below :
+Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then create the symbolic link as below :
 
 ```sh
         sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
@@ -64,7 +64,7 @@ Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding 
 
 ## How to install new alternative "x-file-manager" ?
 
-For example, to install thunar as an alternative for x-file-manager, do the below command :
+For example, to install thunar as an alternative for x-file-manager :
 
 ```sh
         # For thunar
