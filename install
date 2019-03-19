@@ -1,17 +1,10 @@
 #!/bin/sh
 
+# clean old apps and webapps
+./clean
+
 # install others repos
 ./pre-install/add-repos.sh >/dev/null 2>&1
-
-# uninstall unwanted apps
-for app in $(cat config/unapps.list)
-do
-    res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app 2>/dev/null)
-    if [ "$res" = "installed" ]
-    then
-        sudo apt purge -y "$app" >/dev/null 2>&1 
-    fi
-done
 
 # install wanted apps
 for app in $(cat config/apps.list)
@@ -81,7 +74,7 @@ do
 done
 IFS=$oldIFS
 
-# list of webapps tag:filename:url
+# Install webapps list of webapps tag:filename:url
 oldIFS=$IFS
 for dot in $(cat config/webapps.list)
 do
