@@ -42,12 +42,12 @@
 static const struct arg args[] = {
 	/* function	format        argument */
 	{ echo,        "⋮v%s", VERSION },
-	{ cpu_perc,    "⋮cpu %s ",  NULL },
+	{ datetime,    "⋮%s",   "%d/%m/%y %T" },
+  	{ cpu_perc,    "⋮cpu %s ",  NULL },
     { run_command, "%s°C", "cputemp" },
 	{ ram_perc,    "⋮ram %s", NULL },
-    { run_command, "⋮♫ %s ", "audio" },
-    { run_command, "%s", "audio i" },
 	{ wifi_essid,  "⋮%s ", "wlan0" },
-	{ wifi_perc,  "%s", "wlan0" },
-	{ datetime,    "⋮%s",   "%d/%m/%y %T" },
+	{ wifi_perc,   "%s", "wlan0" },
+  	{ run_command, "⋮♫ %s ", "audio" },
+    { run_command, "%s", "audio i" },
 };
