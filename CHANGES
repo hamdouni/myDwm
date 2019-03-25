@@ -1,3 +1,6 @@
+Version 1.4.2:
+ - Fix reinstall unwanted webapp
+
 Version 1.4.1:
  - Music repeated and shuffled
  - Reorganize status order and put audio as last
