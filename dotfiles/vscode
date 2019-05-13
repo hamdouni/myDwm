@@ -5,7 +5,8 @@
     "go.formatTool": "goimports",
     "files.associations": {
         "*.rsp": "html",
-        "*.r": "red"
+        "*.r": "red",
+        "*.svelte": "html"
     },
     "workbench.sideBar.location": "left",
     "editor.fontFamily": "Fira Code iScript",
