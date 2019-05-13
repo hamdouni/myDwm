@@ -88,7 +88,7 @@ do
 done
 IFS=$oldIFS
 
-# Hack fonts
+# Fira Code iScript fonts
 if [ ! -e $HOME/.fonts ]
 then
     mkdir -p $HOME/.fonts
@@ -96,7 +96,7 @@ fi
 cp ./assets/fonts/* $HOME/.fonts
 fc-cache -fv > /dev/null
 xrdb -merge $HOME/.Xresources
-gsettings set org.gnome.desktop.interface monospace-font-name 'Hack 12'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code iScript 12'
 
 # after installing xfce power manager, set tray icon
 xfconf-query -n -t int -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s 1

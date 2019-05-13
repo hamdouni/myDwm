@@ -8,7 +8,7 @@
         "*.r": "red"
     },
     "workbench.sideBar.location": "left",
-    "editor.fontFamily": "Liga Hack, monospace",
+    "editor.fontFamily": "Fira Code iScript",
     "editor.fontSize": 16,
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
@@ -27,6 +27,6 @@
     "breadcrumbs.enabled": true,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "terminal.integrated.fontFamily": "Liga Hack",
+    "terminal.integrated.fontFamily": "Fira Code iScript",
     "files.autoGuessEncoding": true,
 }
