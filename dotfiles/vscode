@@ -30,4 +30,5 @@
     "explorer.confirmDelete": false,
     "terminal.integrated.fontFamily": "Fira Code iScript",
     "files.autoGuessEncoding": true,
+    "window.menuBarVisibility": "hidden",
 }
