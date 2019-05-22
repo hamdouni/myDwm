@@ -35,6 +35,7 @@ gsettings set com.canonical.notify-osd multihead-mode focus-follow
 
 xinput set-prop "12" "libinput Disable While Typing Enabled" 1      # disable touchpad while typing
 xinput set-prop "12" "libinput Tapping Enabled" 1                   # enable tap as click
+xinput set-prop "12" "libinput Horizontal Scroll Enabled" 0         # disable horizontal scrolling
 gsettings set org.gnome.desktop.interface cursor-theme 'whiteglass' # mouse cursor
 gsettings set org.gnome.desktop.interface cursor-size 48            # big mouse on gtk apps
 setxkbmap fr &                                                      # french keyboard
