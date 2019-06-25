@@ -5,14 +5,14 @@ static const unsigned int borderpx = 4;        /* border pixel of windows */
 static const unsigned int snap     = 32;       /* snap pixel */
 static const int showbar           = 1;        /* 0 means no bar */
 static const int topbar            = 1;        /* 0 means bottom bar */
-static const char *fonts[]         = { "Sans:size=10" };
-static const char dmenufont[]      = "Sans:size=10";
-static const char normbgcol[]      = "#ededed";
-static const char normfgcol[]      = "#222222";
-static const char normborder[]     = "#222222";
-static const char selborder[]      = "#d7979f";
-static const char selbgcol[]       = "#222222";
-static const char selfgcol[]       = "#ededed";
+static const char *fonts[]         = { "Sans:size=11" };
+static const char dmenufont[]      = "Sans:size=11";
+static const char normbgcol[]      = "#dedede"; /* fond bar */
+static const char normfgcol[]      = "#000000"; /* text bar */
+static const char normborder[]     = "#222222";	/* bordure autour fenetre inactive */
+static const char selborder[]      = "#ff5959";	/* bordure autour fenetre active */
+static const char selbgcol[]       = "#085f63"; /* fond bar active menu et tab */
+static const char selfgcol[]       = "#ffffff";	/* text bar active menu et tab */
 static const char *colors[][3]     = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcol, normbgcol, normborder },
@@ -24,7 +24,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 
 /* tagging */
-static const char *tags[] = { "1_main_one", "2_main_two", "3_main_three", "4_backlog", "5_org", "6_com", "7_media" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,7 +43,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.65; /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
 
