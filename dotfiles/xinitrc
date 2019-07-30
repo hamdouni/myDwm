@@ -12,12 +12,16 @@ bright=`expr $bmax \* $bperc / 100`
 sudo pkexec xfpm-power-backlight-helper --set-brightness $bright 
 
 # Disposition
-other=`xrandr |grep " connected" | awk '{print $1}' | grep -v 'eDP-1\|^$i'`
-xrandr --output $other --off
-case $computer in
-    xps15) xrandr --output eDP-1 --auto --pos 0x0 --output DP-1-1 --primary --auto --left-of eDP-1 --output DP-2-3 --auto --left-of DP-1-1 ;;
-    xps13) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --above eDP-1 ;;
-esac
+if [ -f ~/.screenlayout/main.sh ]; then
+    ~/.screenlayout/main.sh
+else
+    other=`xrandr |grep " connected" | awk '{print $1}' | grep -v 'eDP-1\|^$i'`
+    xrandr --output $other --off
+    case $computer in
+        xps15) xrandr --output eDP-1 --auto --pos 0x0 --output DP-1-1 --primary --auto --left-of eDP-1 --output DP-2-3 --auto --left-of DP-1-1 ;;
+        xps13) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --above eDP-1 ;;
+    esac
+fi
 
 # Blanking disabled
 xset s off

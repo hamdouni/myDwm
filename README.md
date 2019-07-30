@@ -33,6 +33,13 @@
 * Multimedia keys pilot moc "music on console" (shell script myMocp)
 * Volume keys pilot PulseAudio (shell script pavol)
 
+## Screen Layout
+
+You can configure your screen layout by placing a shell file "main.sh" in the folder ".screenlayout" in your home directory.
+If the file exists, it will be executed at xinit, and if not, there is a minimal fall back inside the .xinitrc file.
+
+*TIPS* : you can use arandr to generate the correct screen layout shell command.
+
 ## Make and install
 
 ```sh
