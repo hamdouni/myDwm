@@ -6,6 +6,8 @@ static const unsigned int snap     = 32;       /* snap pixel */
 static const int showbar           = 1;        /* 0 means no bar */
 static const int topbar            = 1;        /* 0 means bottom bar */
 static const char *fonts[]         = { "Sans:size=12" };
+static const char dmenuprompt[] 	= "Cmd>> ";
+static const char dmenulines[] 		= "20";
 static const char dmenufont[]      = "Sans:size=12";
 static const char normbgcol[]      = "#000000"; /* fond bar */
 static const char normfgcol[]      = "#a0a0a0"; /* text bar */
@@ -67,7 +69,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", dmenuprompt, "-l", dmenulines, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
 static const char *termcmd[]  = { "x-terminal-emulator",NULL };
 static const char *voldown[]  = { "audio","-",NULL };
 static const char *volup[]    = { "audio","+",NULL };
