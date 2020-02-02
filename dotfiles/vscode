@@ -31,4 +31,5 @@
     "terminal.integrated.fontFamily": "Fira Code iScript",
     "files.autoGuessEncoding": true,
     "window.menuBarVisibility": "hidden",
+    "go.useLanguageServer": true,
 }
