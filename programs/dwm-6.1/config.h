@@ -33,15 +33,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Update-manager", NULL, 		NULL,       		0,          True,	  	-1 },
-	{ NULL,             NULL, 		"Hangouts", 		0,          True,	  	-1 },
-	{ "media",			NULL, 		NULL,			1 << 6, 		False, 		-1 },
-	{ "com", 			NULL, 		NULL,			1 << 5, 		False, 		-1 },
-	{ "org",			NULL, 		NULL,			1 << 4, 		False, 		-1 },
-	{ "backlog", 		NULL, 		NULL,	 		1 << 3, 		False, 		-1 },
+	/* class      		instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     		NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Update-manager", NULL, 		NULL,		0,          True,	  	-1 },
+	{ "KeePassXC",		NULL,		NULL,		0,			1,			-1},
 };
 
 /* layout(s) */
