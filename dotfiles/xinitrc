@@ -6,7 +6,7 @@ computer=$(hostname)
 ####################### SCREEN
 
 # Brightness
-bperc="20" # percent
+bperc="50" # percent
 bmax=`xfpm-power-backlight-helper --get-max-brightness`
 bright=`expr $bmax \* $bperc / 100`
 sudo pkexec xfpm-power-backlight-helper --set-brightness $bright 
