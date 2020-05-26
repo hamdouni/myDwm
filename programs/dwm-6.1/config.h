@@ -11,10 +11,10 @@ static const char dmenulines[] 		= "20";
 static const char dmenufont[]      = "Sans:size=12";
 static const char normbgcol[]      = "#000000"; /* fond bar */
 static const char normfgcol[]      = "#a0a0a0"; /* text bar */
-static const char normborder[]     = "#000000";	/* bordure autour fenetre inactive */
-static const char selborder[]      = "#085f63";	/* bordure autour fenetre active */
-static const char selbgcol[]       = "#085f63"; /* fond bar active menu et tab */
-static const char selfgcol[]       = "#ffffff";	/* text bar active menu et tab */
+static const char normborder[]     = "#efefef";	/* bordure autour fenetre inactive */
+static const char selborder[]      = "#ff5f08";	/* bordure autour fenetre active */
+static const char selbgcol[]       = "#000000"; /* fond bar active menu et tab */
+static const char selfgcol[]       = "#08ff5f";	/* text bar active menu et tab */
 static const char *colors[][3]     = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcol, normbgcol, normborder },
