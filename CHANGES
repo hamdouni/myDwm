@@ -1,3 +1,7 @@
+Version 1.14:
+ - Ignore .o files
+ - Change colors for better contrast
+
 Version 1.13:
  - Fix screen brightness to 50%
 
