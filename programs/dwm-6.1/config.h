@@ -78,6 +78,7 @@ static const char *play[] = { "audio","g",NULL };
 static const char *browser[] = { "x-www-browser", NULL };
 static const char *slock[] = { "slock", NULL };
 static const char *screenshot[] = { "myScreenshot", NULL };
+static const char *passwordmngt[] = { "keepassxc", NULL } ;
 
 
 
@@ -91,6 +92,7 @@ static Key keys[] = {
 	{ 0,				0x1008ff12,	spawn,	{.v = volmute} },
 	{ 0,				0x1008ff93,	spawn,	{.v = trackpadonoff} },
 	{ 0,				XK_Print,	spawn,	{.v = screenshot} },
+	{ MODKEY,                       XK_p,      spawn,          {.v = passwordmngt } },
 	{ MODKEY,                       XK_s,  	   spawn,          {.v = slock } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
