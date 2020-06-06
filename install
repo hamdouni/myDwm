@@ -105,12 +105,6 @@ xfconf-query -n -t int -c xfce4-power-manager -p /xfce4-power-manager/show-tray-
 sudo cp ./assets/xfpm/* /usr/share/icons/hicolor/22x22/status
 sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
 
-# install Dropbox
-if [ ! -e $HOME/.dropbox ]
-then
-    wget -O /tmp/db.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb && sudo dpkg -i /tmp/db.deb  >/dev/null 2>&1
-fi
-
 # install oh-my-zsh
 if [ ! -e $HOME/.oh-my-zsh ]
 then

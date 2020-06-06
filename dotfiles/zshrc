@@ -21,8 +21,8 @@ setopt NO_HUP
 setopt NO_CHECK_JOBS
 stty -ixon
 # config for todo.txt script (cf https://github.com/ginatrapani/todo.txt)
-alias todo=~/Dropbox/todo/todo.sh
-source ~/Dropbox/todo/todo_completion
+alias todo=~/cloud/todo/todo.sh
+source ~/cloud/todo/todo_completion
 export TODOTXT_DEFAULT_ACTION=ls
 
 # If on first tty1, launch X
