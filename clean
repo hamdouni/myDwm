@@ -18,3 +18,9 @@ do
         sudo apt purge -y "$app" >/dev/null 2>&1 
     fi
 done
+
+# uninstall shell scripts
+for s in $(cat config/unshell.list)
+do
+    rm ~/bin/$s 
+done

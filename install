@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# clean old apps and webapps
+# clean old apps and webapps and shell scripts
 ./clean
 
 # install others repos
