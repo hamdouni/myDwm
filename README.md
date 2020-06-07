@@ -20,6 +20,8 @@
 * Command key mapped on Windows key
   * win + e : open x-file-manager (see below how to set alternatives) 
   * win + s : lock screen (type user password to unlock)
+  * win + g : open browser
+  * win + p : open password manager
   * win + h : reduce main area
   * win + l : enlarge main area
   * win + m : monocle area
@@ -30,8 +32,9 @@
   * win + shift + TAB   : focus previous area
   * win + shit + c      : close window
   * PRINTSCREEN         : select an area to screenshot and create a png in home and copy to clipboard (shell script myScreenshot)
-* Multimedia keys pilot moc "music on console" (shell script myMocp)
-* Volume keys pilot PulseAudio (shell script pavol)
+* Multimedia keys pilot moc "music on console" (shell script audio)
+* Volume keys pilot PulseAudio (shell script audio)
+* Autostart programs are in $HOME/bin/dwm-start, last loop for dwm
 
 ## Screen Layout
 
@@ -46,8 +49,9 @@ If the file exists, it will be executed at xinit, and if not, there is a minimal
     ./install
 ```
 
+* Clean unwanted apps and shell scripts.
 * Makes and installs the programs in /usr/bin.
-* Copy shell scripts in /usr/bin. (dwm-loop, pavol)
+* Copy shell scripts in $HOME/bin. (dwm-start, audio, ...)
 * Copy dotfiles in $HOME. (backup existings ones).
 * Apt-install other apps (xsettingsd, blueman, feh, moc)
 
