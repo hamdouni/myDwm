@@ -20,7 +20,10 @@ do
 done
 
 # uninstall shell scripts
-for s in $(cat config/unshell.list)
+for f in $(cat config/unshell.list)
 do
-    rm ~/bin/$s 
+    if [ -e $HOME/bin/$f ]
+    then
+        rm $HOME/bin/$f
+    fi
 done
