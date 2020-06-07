@@ -54,7 +54,8 @@ sudo hciconfig hci0 lp rswitch,hold,park    # bluetooth don't sleep
 
 slstatus -d                     # dwm status bar
 xsettingsd &                    # config server
-dropbox start &                 # dropbox
+gnome-keyring-daemon -d         # password manager for owncloud
+owncloud &                      # owncloud
 xfce4-power-manager &           # powermanagement
 xrdb -load ~/.Xresources        # x resources
 /usr/bin/start-pulseaudio-x11 & # sound server
