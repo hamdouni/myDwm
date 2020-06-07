@@ -1,3 +1,9 @@
+Version 1.16.2:
+ - Update Readme
+ - Clean unwanted shell scripts
+ - Rename dwm-loop to dwm-start cause it starts all programs
+ - Move all autostart prog after dbus launch
+
 Version 1.16.1:
  - Auto start owncloud
 
