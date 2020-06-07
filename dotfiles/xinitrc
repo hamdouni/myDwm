@@ -2,4 +2,4 @@
 
 ####################### LAUNCH DWM
 
-exec dbus-launch dwm-loop 2> ~/.xsession-errors
+exec dbus-launch dwm-start 2> ~/.xsession-errors
