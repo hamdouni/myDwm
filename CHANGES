@@ -1,3 +1,7 @@
+Version 1.16.3:
+ - Clean shell script only if it exists
+ - Reuse dropbox temporarly
+
 Version 1.16.2:
  - Update Readme
  - Clean unwanted shell scripts
