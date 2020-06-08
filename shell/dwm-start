@@ -49,7 +49,7 @@ xrdb -load ~/.Xresources        # x resources
 /usr/bin/start-pulseaudio-x11 & # sound server
 /usr/bin/owncloud &             # owncloud
 
-dropbox -start & # use dropbox temporarly
+dropbox start & # use dropbox temporarly
 
 while true; do
     # Log stderror to a file 
