@@ -1,3 +1,6 @@
+Version 1.16.4:
+ - Fix dropbox start
+
 Version 1.16.3:
  - Clean shell script only if it exists
  - Reuse dropbox temporarly
