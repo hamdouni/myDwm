@@ -12,7 +12,7 @@ else
         xps13) xrandr --output eDP-1 --auto --pos 0x0 --output $other --primary --auto --above eDP-1 ;;
     esac
 fi
-feh --bg-scale ~/docs/public/orion-nebula-3840x2160-hubble-space-telescope-nasa-hd-5k-1933.jpg
+feh --bg-scale ~/docs/public/wp.jpg
 # Notification on focused screen
 gsettings set com.canonical.notify-osd multihead-mode focus-follow
 
