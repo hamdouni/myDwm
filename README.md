@@ -11,6 +11,7 @@
 * [wmname 0.1](http://tools.suckless.org/wmname)
 * [slock 1.1](http://tools.suckless.org/slock/)
 * [slstatus](https://github.com/drkhsh/slstatus)
+* ZSH Shell with [Oh My Zsh](https://ohmyz.sh/) and [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 ## Default configuration
 

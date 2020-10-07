@@ -105,10 +105,19 @@ xfconf-query -n -t int -c xfce4-power-manager -p /xfce4-power-manager/show-tray-
 sudo cp ./assets/xfpm/* /usr/share/icons/hicolor/22x22/status
 sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
 
-# install oh-my-zsh
-if [ ! -e $HOME/.oh-my-zsh ]
+# install or update oh-my-zsh
+if [ ! -e $ZSH ]
 then
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+else
+    git -C $ZSH pull
+fi
+# install or update powerlevel10k
+if [ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]
+then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+else
+    git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
 fi
 
 # some configuration after install

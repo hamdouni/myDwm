@@ -1,6 +1,7 @@
 monokai.vim:.vim/colors/monokai.vim
 xinitrc:.xinitrc
 zshrc:.zshrc
+p10k.zsh:.p10k.zsh
 aliases:.aliases
 vimrc:.vimrc
 Xresources:.Xresources
