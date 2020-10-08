@@ -8,6 +8,7 @@
 * [Dmenu 4.5](http://tools.suckless.org/dmenu/)
 * [Systray patch](http://dwm.suckless.org/patches/systray)
 * Xft patch : for [dwm](http://dwm.suckless.org/patches/xft) and [dmenu](http://tools.suckless.org/dmenu/patches/xft)
+* [full gaps patch](https://dwm.suckless.org/patches/fullgaps/)
 * [wmname 0.1](http://tools.suckless.org/wmname)
 * [slock 1.1](http://tools.suckless.org/slock/)
 * [slstatus](https://github.com/drkhsh/slstatus)
@@ -32,6 +33,10 @@
   * win + TAB           : focus next area
   * win + shift + TAB   : focus previous area
   * win + shit + c      : close window
+  * win + -             : shrink gap between windows
+  * win + =             : grow gap between windows
+  * win + shift + =     : disable gap between windows
+  * win + shift + q     : reload dwm
   * PRINTSCREEN         : select an area to screenshot and create a png in home and copy to clipboard (shell script myScreenshot)
 * Multimedia keys pilot moc "music on console" (shell script audio)
 * Volume keys pilot PulseAudio (shell script audio)
