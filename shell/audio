@@ -15,14 +15,20 @@
 # default shows actual volume
 
 # get volume 
-VOL=$(amixer get Master | awk '/Mono.+/ {print $6=="[off]"?$6:$4}' | tr -d '[]')
+VOL=$(pacmd list-sinks|grep -A 15 '* index'| awk '/volume: front/{ print $5 }' | sed 's/[%|,]//g')
 
 case "$1" in
         +)
-            pactl set-sink-volume @DEFAULT_SINK@ +5%
+            if [ $VOL -lt 95 ]
+            then
+                pactl set-sink-volume @DEFAULT_SINK@ +5%
+            fi
         ;;
         -)
-            pactl set-sink-volume @DEFAULT_SINK@ -5%
+            if [ $VOL -gt 5 ]
+            then
+                pactl set-sink-volume @DEFAULT_SINK@ -5%
+            fi
         ;;
         m)
             pactl set-sink-mute @DEFAULT_SINK@ toggle
