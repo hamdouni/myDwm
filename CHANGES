@@ -1,3 +1,7 @@
+Version 1.19.1:
+ - Fix audio shell script
+ - Fix #1 mocp crashes when volume > 100%
+
 Version 1.19:
  - Add window gaps
 
