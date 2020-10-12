@@ -35,7 +35,7 @@ case "$1" in
         ;;
         g)
             # Play music. If server off, run it
-            if mocp -i ; then 
+            if mocp -i > /dev/null 2>&1 ; then 
                 mocp -G
             else 
                 mocp -S
@@ -52,7 +52,15 @@ case "$1" in
         ;;
         i)
             # info on played song
-            mocp -Q '%song'
+            if mocp -i > /dev/null 2>&1 ; then
+                AUDIOINFO=$(mocp -Q '%song')
+            else
+                AUDIOINFO="No music"
+            fi
+            if [ -z "$AUDIOINFO" ] ; then
+                AUDIOINFO=$(mocp -Q '%state')
+            fi
+            echo $AUDIOINFO
         ;;
         *)
             echo "$VOL"
