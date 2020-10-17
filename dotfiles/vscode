@@ -9,11 +9,13 @@
         "*.svelte": "html"
     },
     "workbench.sideBar.location": "left",
-    "editor.fontFamily": "Fira Code iScript",
+    "editor.fontFamily": "'3270Medium Nerd Font Mono','Fira Code iScript'",
+    "terminal.integrated.fontSize": 16,
     "editor.fontSize": 16,
+
     "editor.wordWrap": "on",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Monochrome Dark",
     "workbench.iconTheme": "vs-minimal",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
@@ -28,7 +30,6 @@
     "breadcrumbs.enabled": true,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "terminal.integrated.fontFamily": "Fira Code iScript",
     "files.autoGuessEncoding": true,
     "window.menuBarVisibility": "hidden",
     "go.useLanguageServer": true,
