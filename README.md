@@ -42,6 +42,15 @@
 * Volume keys pilot PulseAudio (shell script audio)
 * Autostart programs are in $HOME/bin/dwm-start, last loop for dwm
 
+__VSCode keybindings__
+
+* ctrl + shift + b : show explorer in the sidebar
+* ctrl + shift + x : show extenstion in the sidebar
+* ctrl + shift + f : show search sidebar
+* ctrl + shift + g : show source controle in sidebar
+* shift + ² : toggle into terminal
+* ctrl + shift + ² : create new terminal
+
 ## Screen Layout
 
 You can configure your screen layout by placing a shell file "main.sh" in the folder ".screenlayout" in your home directory.
