@@ -1,6 +1,9 @@
 Version 1.20:
  - Use 3 wallpapers (1 by each screen)
 
+Version 1.19.2:
+ - Install and use 3270 Nerd Font
+
 Version 1.19.1:
  - Fix audio shell script
  - Fix #1 mocp crashes when volume > 100%
