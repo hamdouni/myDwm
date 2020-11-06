@@ -1,3 +1,6 @@
+Version 1.20.2:
+ - Add new keybidings for VSCode
+
 Version 1.20.1:
  - Fix bigger font in dunst config + remove deprecated
  - Merge branch 'master' of ssh://github.com/hamdouni/myDwm
