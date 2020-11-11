@@ -6,16 +6,16 @@ static const unsigned int snap     = 32;       /* snap pixel */
 static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const int showbar           = 1;        /* 0 means no bar */
 static const int topbar            = 1;        /* 0 means bottom bar */
-static const char *fonts[]         = { "Sans:size=12" };
+static const char *fonts[]         = { "3270Medium Nerd Font Mono:size=14" };
 static const char dmenuprompt[] 	= "Cmd>> ";
 static const char dmenulines[] 		= "20";
-static const char dmenufont[]      = "Sans:size=12";
+static const char dmenufont[]      = "3270Medium Nerd Font Mono:size=14";
 static const char normbgcol[]      = "#000000"; /* fond bar */
 static const char normfgcol[]      = "#a0a0a0"; /* text bar */
 static const char normborder[]     = "#efefef";	/* bordure autour fenetre inactive */
 static const char selborder[]      = "#ff5f08";	/* bordure autour fenetre active */
 static const char selbgcol[]       = "#000000"; /* fond bar active menu et tab */
-static const char selfgcol[]       = "#08ff5f";	/* text bar active menu et tab */
+static const char selfgcol[]       = "#ff5f08";	/* text bar active menu et tab */
 static const char *colors[][3]     = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcol, normbgcol, normborder },
@@ -42,9 +42,10 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.65; /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
+static const int attachdirection = 4;    /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -118,9 +119,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_F1,                      0)
 	TAGKEYS(                        XK_F2,                      1)
 	TAGKEYS(                        XK_F3,                      2)
