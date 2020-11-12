@@ -6,10 +6,10 @@ static const unsigned int snap     = 32;       /* snap pixel */
 static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const int showbar           = 1;        /* 0 means no bar */
 static const int topbar            = 1;        /* 0 means bottom bar */
-static const char *fonts[]         = { "3270Medium Nerd Font Mono:size=14" };
+static const char *fonts[]         = { "3270Medium Nerd Font Mono:size=16" };
 static const char dmenuprompt[] 	= "Cmd>> ";
 static const char dmenulines[] 		= "20";
-static const char dmenufont[]      = "3270Medium Nerd Font Mono:size=14";
+static const char dmenufont[]      = "3270Medium Nerd Font Mono:size=16";
 static const char normbgcol[]      = "#000000"; /* fond bar */
 static const char normfgcol[]      = "#a0a0a0"; /* text bar */
 static const char normborder[]     = "#efefef";	/* bordure autour fenetre inactive */

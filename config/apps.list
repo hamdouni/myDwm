@@ -3,6 +3,7 @@ blueman
 ca-certificates curl 
 chromium-browser
 code
+compton
 dbus-x11
 docker-ce 
 dunst
