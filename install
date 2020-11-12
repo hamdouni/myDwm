@@ -17,7 +17,7 @@ do
 done
 
 # create dirs if not exist
-for d in bin .local/share/applications
+for d in .local/bin .local/share/applications
 do
     if [ ! -e $HOME/$d ]
     then
@@ -37,8 +37,8 @@ cd ..
 
 for script in $(ls shell)
 do
-    cp shell/$script $HOME/bin/
-    chmod a+rx $HOME/bin/$script
+    cp shell/$script $HOME/.local/bin/
+    chmod a+rx $HOME/.local/bin/$script
 done
 
 # list of files and destination with : separation
@@ -83,8 +83,8 @@ do
     tag=$1
     filename=$2
     url=$3
-    echo "#!/bin/sh\nchromium-browser --disable-local-storage --disable-background-networking --class='$tag' -user-data-dir=$HOME/.webapps/$tag --app='$url'" > $HOME/bin/$filename
-    chmod a+x $HOME/bin/$filename
+    echo "#!/bin/sh\nchromium-browser --disable-local-storage --disable-background-networking --class='$tag' -user-data-dir=$HOME/.webapps/$tag --app='$url'" > $HOME/.local/bin/$filename
+    chmod a+x $HOME/.local/bin/$filename
 done
 IFS=$oldIFS
 

@@ -3,9 +3,9 @@
 # Uninstall webapps
 for f in $(cat config/unwebapps.list)
 do
-    if [ -e $HOME/bin/$f ]
+    if [ -e $HOME/.local/bin/$f ]
     then
-        rm $HOME/bin/$f
+        rm $HOME/.local/bin/$f
     fi
 done
 
@@ -22,8 +22,8 @@ done
 # uninstall shell scripts
 for f in $(cat config/unshell.list)
 do
-    if [ -e $HOME/bin/$f ]
+    if [ -e $HOME/.local/bin/$f ]
     then
-        rm $HOME/bin/$f
+        rm $HOME/.local/bin/$f
     fi
 done

@@ -17,10 +17,10 @@ with "filename" is the name of the configuration file in "dotfiles" folder and "
 
 ## webapps.list
 
-Install all desktop webapps with a chromium shell in $HOME/bin with the appropriate dwm tag.
+Install all desktop webapps with a chromium shell in $HOME/.local/bin with the appropriate dwm tag.
 
 ```
 webappname;tag;url
 ```
 
-with "webappname" the name of the webapp in $HOME/bin, "tag" the dwm tag destination, "url" the webapp url.
+with "webappname" the name of the webapp in $HOME/.local/bin, "tag" the dwm tag destination, "url" the webapp url.

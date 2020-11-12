@@ -40,7 +40,7 @@
   * PRINTSCREEN         : select an area to screenshot and create a png in home and copy to clipboard (shell script myScreenshot)
 * Multimedia keys pilot moc "music on console" (shell script audio)
 * Volume keys pilot PulseAudio (shell script audio)
-* Autostart programs are in $HOME/bin/dwm-start, last loop for dwm
+* Autostart programs are in $HOME/.local/bin/dwm-start, last loop for dwm
 
 __VSCode keybindings__
 
@@ -66,7 +66,7 @@ If the file exists, it will be executed at xinit, and if not, there is a minimal
 
 * Clean unwanted apps and shell scripts.
 * Makes and installs the programs in /usr/bin.
-* Copy shell scripts in $HOME/bin. (dwm-start, audio, ...)
+* Copy shell scripts in $HOME/.local/bin. (dwm-start, audio, ...)
 * Copy dotfiles in $HOME. (backup existings ones).
 * Apt-install other apps (xsettingsd, blueman, feh, moc)
 
