@@ -1,3 +1,7 @@
+Version 1.22:
+ - Use .local/bin
+ - Add transparency, bigger font and icons in status bar
+
 Version 1.21:
  - Update dwm 6.2
 
