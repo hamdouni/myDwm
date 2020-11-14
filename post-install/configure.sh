@@ -8,8 +8,9 @@ git config --global push.default simple
 # make docker usable withoud sudo
 sudo usermod -aG docker $USER
 
-# make terminology my default
-sudo update-alternatives --quiet --set x-terminal-emulator /usr/bin/terminology
+# make st my default
+sudo update-alternatives --quiet --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/st 1000
+sudo update-alternatives --quiet --set x-terminal-emulator /usr/bin/st
 
 # make pcmanfm default file manager
 sudo update-alternatives --quiet --remove-all x-file-manager 2>/dev/null
