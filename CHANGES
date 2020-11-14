@@ -1,3 +1,6 @@
+Version 1.23:
+ - Replace terminology with st + scroll
+
 Version 1.22:
  - Use .local/bin
  - Add transparency, bigger font and icons in status bar
