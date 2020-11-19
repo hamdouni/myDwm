@@ -33,13 +33,17 @@
   * win + TAB           : focus next area
   * win + shift + TAB   : focus previous area
   * win + shit + c      : close window
-  * win + -             : shrink gap between windows
-  * win + =             : grow gap between windows
-  * win + shift + =     : disable gap between windows
   * win + shift + q     : reload dwm
   * PRINTSCREEN         : select an area to screenshot and create a png in home and copy to clipboard (shell script myScreenshot)
-* Multimedia keys pilot moc "music on console" (shell script audio)
-* Volume keys pilot PulseAudio (shell script audio)
+
+* Multimedia keys pilot moc "music on console" and PulseAudio (shell script audio) + fallback for non multimedia keyboard
+  * ctrl + F1 : toggle mute/unmute
+  * ctrl + F2 : volume down
+  * ctrl + F3 : volume up
+  * ctrl + F4 : previous song
+  * ctrl + F5 : toggle play/pause
+  * ctrl + F6 : next song
+
 * Autostart programs are in $HOME/.local/bin/dwm-start, last loop for dwm
 
 __VSCode keybindings__
