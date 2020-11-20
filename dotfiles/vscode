@@ -40,4 +40,5 @@
     "workbench.activityBar.visible": false,
     "editor.cursorStyle": "block",
     "editor.lineNumbers": "on",
+    "editor.rulers": [80,120],
 }
