@@ -1,3 +1,6 @@
+Version 1.24.2:
+ - Fix TERM=xterm-256color inside st
+
 Version 1.24.1:
  - Add 80 column rulers to vscode
 
