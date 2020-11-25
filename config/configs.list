@@ -16,3 +16,4 @@ Trolltech.conf:.config/Trolltech.conf
 sshconfig:.ssh/config
 dunstrc:.config/dunst/dunstrc
 google-chrome-new-window.desktop:.local/share/applications/google-chrome-new-window.desktop
+tmux.conf:.tmux.conf
