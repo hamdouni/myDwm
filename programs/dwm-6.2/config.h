@@ -73,7 +73,6 @@ static const char *voldown[]  = { "audio","-",NULL };
 static const char *volup[]    = { "audio","+",NULL };
 static const char *volmute[]  = { "audio","m",NULL };
 static const char *filemanager[] = { "x-file-manager",NULL };
-static const char *trackpadonoff[] = {"trackpadonoff",NULL }; // touche FN+F3
 static const char *prev[] = { "audio","p",NULL };
 static const char *next[] = { "audio","n",NULL };
 static const char *play[] = { "audio","g",NULL };
