@@ -68,7 +68,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-p", dmenuprompt, "-l", dmenulines, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
-static const char *termcmd[]  = { "x-terminal-emulator", "-e", "tmux",NULL };
+static const char *termcmd[]  = { "x-terminal-emulator", "-e", "tmux", "a", NULL };
 static const char *voldown[]  = { "audio","-",NULL };
 static const char *volup[]    = { "audio","+",NULL };
 static const char *volmute[]  = { "audio","m",NULL };

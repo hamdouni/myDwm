@@ -4,11 +4,11 @@
 
 ## Based on
 
-* [DWM 6.0](http://dwm.suckless.org/)
+* [DWM 6.2](http://dwm.suckless.org/)
+  * [Systray patch](http://dwm.suckless.org/patches/systray)
+  * [Useless Gap patch](https://dwm.suckless.org/patches/uselessgap/)
+  * [Attach Direction patch](https://dwm.suckless.org/patches/attachdirection/)
 * [Dmenu 4.5](http://tools.suckless.org/dmenu/)
-* [Systray patch](http://dwm.suckless.org/patches/systray)
-* Xft patch : for [dwm](http://dwm.suckless.org/patches/xft) and [dmenu](http://tools.suckless.org/dmenu/patches/xft)
-* [full gaps patch](https://dwm.suckless.org/patches/fullgaps/)
 * [wmname 0.1](http://tools.suckless.org/wmname)
 * [slock 1.1](http://tools.suckless.org/slock/)
 * [slstatus](https://github.com/drkhsh/slstatus)
@@ -18,8 +18,11 @@
 
 * Prefix path = /usr (need root access to install)
 * Preinstalled patches : systray and xft
-* Font "Sans" size 12
+* Font "3270 Nerd Font" size 16
+* Autostart programs are in $HOME/.local/bin/dwm-start, last loop for dwm
 * Command key mapped on Windows key
+
+* General shortcuts
   * win + e : open x-file-manager (see below how to set alternatives) 
   * win + s : lock screen (type user password to unlock)
   * win + g : open browser
@@ -44,16 +47,20 @@
   * ctrl + F5 : toggle play/pause
   * ctrl + F6 : next song
 
-* Autostart programs are in $HOME/.local/bin/dwm-start, last loop for dwm
+* VSCode keybindings
+  * ctrl + shift + b : show explorer in the sidebar
+  * ctrl + shift + x : show extenstion in the sidebar
+  * ctrl + shift + f : show search sidebar
+  * ctrl + shift + g : show source controle in sidebar
+  * ctrl + j : toggle terminal panel
+  * shift + ² : toggle into terminal
+  * ctrl + shift + ² : create new terminal
 
-__VSCode keybindings__
+## Terminal
 
-* ctrl + shift + b : show explorer in the sidebar
-* ctrl + shift + x : show extenstion in the sidebar
-* ctrl + shift + f : show search sidebar
-* ctrl + shift + g : show source controle in sidebar
-* shift + ² : toggle into terminal
-* ctrl + shift + ² : create new terminal
+It uses st (suckless terminal) with patch alpha for transparency and anysize so the st window take all available place. 
+
+Tmux is used as the multiplexer (scroll, splitting, etc...) with prefix CTRL+A to differenciate from remote session on default CTRL+B.
 
 ## Screen Layout
 
