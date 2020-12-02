@@ -1,3 +1,6 @@
+Version 1.24.7:
+ - Better script to launch or reattach terminal tmux
+
 Version 1.24.6:
  - Silent st and dwm building
  - Fix trackpadonoff no more used
