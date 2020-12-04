@@ -1,3 +1,8 @@
+Version 1.24.8:
+ - Unalias ls to use it in shell script
+ - 1.24.7
+ - 1.24.7
+
 Version 1.24.7:
  - Better script to launch or reattach terminal tmux
 
