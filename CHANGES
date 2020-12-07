@@ -1,3 +1,6 @@
+Version 1.24.10:
+ - Don't shuffle moc by default
+
 Version 1.24.9:
  - Don't show tmux status bar
 
