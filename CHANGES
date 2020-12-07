@@ -1,3 +1,6 @@
+Version 1.24.9:
+ - Don't show tmux status bar
+
 Version 1.24.8:
  - Unalias ls to use it in shell script
  - 1.24.7
