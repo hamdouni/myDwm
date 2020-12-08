@@ -52,6 +52,7 @@
   * ctrl + shift + x : show extenstion in the sidebar
   * ctrl + shift + f : show search sidebar
   * ctrl + shift + g : show source controle in sidebar
+  * ctrl + shift + j : join lines
   * ctrl + j : toggle terminal panel
   * shift + ² : toggle into terminal
   * ctrl + shift + ² : create new terminal
