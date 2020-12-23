@@ -1,3 +1,6 @@
+Version 1.24.12:
+ - Shufflet mocp by default : the problem is not shuffling but the default music selection (too big)
+
 Version 1.24.11:
  - Add vscode shortcut ctrl+shif+j to join lines
 
