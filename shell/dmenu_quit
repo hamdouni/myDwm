@@ -1,0 +1,8 @@
+#!/bin/sh
+
+what=$(echo "RESTART\nLOGOUT" | dmenu -fn '3270Medium Nerd Font Mono:size=16' -i -l 3 -p 'YOU WANT TO')
+
+case "$what" in
+    RESTART) killall -HUP dwm ;;
+    LOGOUT) killall -TERM dwm-start ;;
+esac
