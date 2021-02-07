@@ -41,14 +41,14 @@
 - echo [argument: string to echo] */
 static const struct arg args[] = {
 	/* function	format        argument */
-	{ run_command, "⋮ %s ", "audio" },
-	{ run_command, "%s", "audio i" },
-	{ cpu_perc,    "⋮ %s ",  NULL },
-	{ run_command, "%s°C ", "cputemp" },
-	{ ram_perc,    "ram %s", NULL },
-	{ ip,          "⋮%s ", "wlan0" },
+	{ run_command, "  %s ", "audio" },
+	{ run_command, "  %s", "audio i" },
+	{ cpu_perc,    "  %s ",  NULL },
+	{ run_command, "  %s°C ", "cputemp" },
+	{ ram_used,    "  %s GB", NULL },
+	{ ip,          "  %s ", "wlan0" },
 	{ wifi_essid,  "%s ", "wlan0" },
 	{ wifi_perc,   "%s", "wlan0" },
-	{ datetime,    "⋮%s",   "%d/%m/%y %T" },
-	{ echo,        "⋮v%s", VERSION },
+	{ datetime,    "  %s",   "%d/%m/%y  %T" },
+	{ echo,        "  v%s", VERSION },
 };
