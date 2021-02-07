@@ -1,3 +1,9 @@
+Version 1.25:
+ - Better dmw restart and dmenu quit prompt
+ - Add icons in status bar
+ - Show ram used with .1 float precision
+ - Ciao dropbox
+
 Version 1.24.14:
  - Fix p10k usable on old terminal
 
