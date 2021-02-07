@@ -434,7 +434,7 @@ ram_used(void)
 	fscanf(fp, "Cached: %ld kB\n", &cached);
 	fclose(fp);
 
-	return smprintf("%f", (float)(total - free - buffers - cached) / 1024 / 1024);
+	return smprintf("%.1f", (float)(total - free - buffers - cached) / 1024 / 1024);
 }
 
 static char *
