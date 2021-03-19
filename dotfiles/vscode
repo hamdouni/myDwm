@@ -38,7 +38,9 @@
     "java.semanticHighlighting.enabled": true,
     "workbench.tips.enabled": false,
     "workbench.activityBar.visible": false,
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "editor.lineNumbers": "on",
     "editor.rulers": [80,120],
+    "terminal.explorerKind": "external",
+    "go.toolsManagement.autoUpdate": true,
 }
