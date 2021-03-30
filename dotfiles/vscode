@@ -24,6 +24,7 @@
     "editor.lineNumbers": "on",
     "editor.rulers": [80,120],
     "terminal.explorerKind": "external",
+    "terminal.integrated.showExitAlert": true,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
