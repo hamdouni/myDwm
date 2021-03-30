@@ -1,3 +1,6 @@
+Version 1.26.2:
+ - Do not show alert in VSCode when terminal exit
+
 Version 1.26.1:
  - Organize vscode user settings
  - 1.26
