@@ -1,3 +1,11 @@
+Version 1.27:
+ - Make it possible to have multiple post-install scripts
+ - Change how to manage Code install and use Dendron
+ - 1.26.2
+ - Do not show alert in VSCode when terminal exit
+ - 1.26.2
+ - Do not show alert in VSCode when terminal exit
+
 Version 1.26.2:
  - Do not show alert in VSCode when terminal exit
 
