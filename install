@@ -120,5 +120,10 @@ else
     git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
 fi
 
-# some configuration after install
-./post-install/configure.sh
+# post installation
+cd post-install
+for script in $(ls)
+do
+    ./$script
+done
+cd --
