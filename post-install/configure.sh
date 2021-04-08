@@ -32,3 +32,6 @@ xdg-user-dirs-update --set DOCUMENTS $HOME
 xdg-user-dirs-update --set MUSIC $HOME
 xdg-user-dirs-update --set PICTURES $HOME
 xdg-user-dirs-update --set VIDEOS $HOME
+
+# link to Code as code-app
+ln -fs ~/.local/bin/apps/VSCode-linux-x64/bin/code ~/.local/bin/code-app
