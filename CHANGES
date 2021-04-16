@@ -1,3 +1,6 @@
+Version 1.27.1:
+ - Add libnotify-bin to use notify-send with dunst
+
 Version 1.27:
  - Make it possible to have multiple post-install scripts
  - Change how to manage Code install and use Dendron
