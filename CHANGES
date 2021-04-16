@@ -1,3 +1,6 @@
+Version 1.28:
+ - Add TLDR dmenu
+
 Version 1.27.1:
  - Add libnotify-bin to use notify-send with dunst
 
