@@ -2,4 +2,4 @@
 
 tldr -l \
 | dmenu -l 30 -fn ":size=16" -p 'TLDR ?' \
-| xargs -0I _ xterm -e 'tldr "_" | less && read -sk $"?Press any key to continue."'
+| xargs -0I _ xterm -e 'tldr "_" | less'
