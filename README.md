@@ -31,6 +31,7 @@
   * win + l : enlarge main area
   * win + m : monocle area
   * win + t : tiled area
+  * win + ctrl + space  : open tldr menu
   * win + shift + enter : open terminal
   * win + enter         : swap window in main area
   * win + TAB           : focus next area

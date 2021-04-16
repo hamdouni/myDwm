@@ -134,6 +134,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_F8,                        7)
 	TAGKEYS(                        XK_F9,                        8)
 	{ MODKEY|ShiftMask,             XK_q,         spawn,          SHCMD("dmenu_quit")} ,
+	{ MODKEY|ControlMask,           XK_space,     spawn,          SHCMD("dmenu_tldr")} ,
 };
 
 /* button definitions */

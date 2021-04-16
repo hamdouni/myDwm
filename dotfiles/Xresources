@@ -2,8 +2,8 @@
 Xcursor.theme: whiteglass
 Xcursor.size: 48
 ! Use a nice truetype font and size by default... 
-XTerm*faceName: Fira Code iScript
-XTerm*faceSize: 12
+XTerm*faceName: 3270Medium Nerd Font Mono
+XTerm*faceSize: 20
 ! scale fonts correctly
 Xft.hinting: 1
 Xft.hintstyle: hintfull
