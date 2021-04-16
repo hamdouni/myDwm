@@ -21,7 +21,7 @@ export CDPATH=~/projects
 export LS_COLORS="di=1;36:ln=35:so=35:pi=35:ex=32:bd=35:cd=35:su=1;32:sg=1;32:tw=36:ow=36"
 export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 export LANG=fr_FR.UTF-8
-export LESS="-XFR"
+export LESS="-XR"
 setopt autopushd
 setopt nosharehistory 
 setopt NO_HUP
