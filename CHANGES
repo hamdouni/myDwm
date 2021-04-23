@@ -1,3 +1,10 @@
+Version 1.28.2:
+ - Activate zsh-autosuggestion
+ - 1.28.1
+ - Use 'less' to wait keypress after tldr printed
+ - 1.28.1
+ - Use  to wait keypress after tldr printed
+
 Version 1.28.1:
  - Use  to wait keypress after tldr printed
 
