@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <crypt.h>
 #include <sys/types.h>
 #include <X11/keysym.h>
 #include <X11/Xlib.h>
