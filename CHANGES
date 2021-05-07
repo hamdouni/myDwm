@@ -1,3 +1,11 @@
+Version 1.30:
+ - Verbose install progress
+ - Quiet st build
+ - Remove dwm unused warning function
+ - Add go mod to cputemp
+ - Add docker repo only if not installed (faster)
+ - Fix libpango repo name
+
 Version 1.28.4:
  - Remove chromium as no longer available as ubuntu package :-(
  - Color the terminal
