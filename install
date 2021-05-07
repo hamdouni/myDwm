@@ -1,10 +1,14 @@
 #!/bin/sh
 
 # clean old apps and webapps and shell scripts
+echo -n "cleaning : "
 ./clean
+echo "OK"
 
 # install others repos
+echo -n "add repos : "
 ./pre-install/add-repos.sh >/dev/null 2>&1
+echo "OK"
 
 # install wanted apps
 for app in $(cat config/apps.list)
@@ -12,7 +16,9 @@ do
     res=$(dpkg-query --show --showformat='${db:Status-Status}\n' $app)
     if [ "$res" != "installed" ]
     then
+        echo -n "install $app : "
         sudo apt install -y --no-install-recommends "$app" >/dev/null 2>&1
+        echo "OK"
     fi
 done
 
@@ -21,7 +27,9 @@ for d in .local/bin .local/share/applications
 do
     if [ ! -e $HOME/$d ]
     then
+        echo -n "create dir $HOME/$d : "
         mkdir -p $HOME/$d
+        echo "OK"
     fi
 done
 
@@ -29,22 +37,27 @@ done
 cd programs
 for src in $(ls)
 do
+    echo -n "make and install $src : "
     cd $src 
     make -s && sudo make -s install && make -s clean 
     cd ..
+    echo "OK"
 done
 cd ..
 
 for script in $(ls shell)
 do
+    echo -n "install shell $script : "
     cp shell/$script $HOME/.local/bin/
     chmod a+rx $HOME/.local/bin/$script
+    echo "OK"
 done
 
 # list of files and destination with : separation
 oldIFS=$IFS
 for dot in $(cat config/configs.list)
 do
+    echo -n "install config $dot : "
     IFS=':' 
     set -- $dot
     file=$1
@@ -58,6 +71,7 @@ do
         mkdir -p $(dirname $dest)
     fi
     cp ./dotfiles/$file $dest
+    echo "OK"
 done
 IFS=$oldIFS
 
@@ -66,11 +80,13 @@ IFS=$oldIFS
 oldIFS=$IFS
 for dot in $(cat config/configs-secured.list)
 do
+    echo -n "install secured config $dot : "
     IFS=':' 
     set -- $dot
     file=$1
     dest=$2
     sudo cp ./dotfiles/$file $dest
+    echo "OK"
 done
 IFS=$oldIFS
 
@@ -78,6 +94,7 @@ IFS=$oldIFS
 oldIFS=$IFS
 for dot in $(cat config/webapps.list)
 do
+    echo -n "install webapp $dot : "
     IFS=';' 
     set -- $dot
     tag=$1
@@ -85,10 +102,12 @@ do
     url=$3
     echo "#!/bin/sh\nchromium-browser --disable-local-storage --disable-background-networking --class='$tag' -user-data-dir=$HOME/.webapps/$tag --app='$url'" > $HOME/.local/bin/$filename
     chmod a+x $HOME/.local/bin/$filename
+    echo "OK"
 done
 IFS=$oldIFS
 
 # fonts
+echo -n "install fonts : "
 if [ ! -e $HOME/.fonts ]
 then
     mkdir -p $HOME/.fonts
@@ -97,33 +116,45 @@ cp ./assets/fonts/* $HOME/.fonts
 fc-cache -fv > /dev/null
 xrdb -merge $HOME/.Xresources
 gsettings set org.gnome.desktop.interface monospace-font-name '3270Medium Nerd Font Mono'
+echo "OK"
 
 # after installing xfce power manager, set tray icon
+echo -n "install xfce power icon : "
 xfconf-query -n -t int -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s 1
+echo "OK"
 
 # install good looking icons
+echo -n "install icons : "
 sudo cp ./assets/xfpm/* /usr/share/icons/hicolor/22x22/status
 sudo cp ./assets/blueman/* /usr/share/icons/hicolor/24x24/status
+echo "OK"
 
 # install or update oh-my-zsh
+echo -n "install zsh : "
 if [ ! -e $ZSH ]
 then
     sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 else
-    git -C $ZSH pull
+    git -C $ZSH pull -q
 fi
+echo "OK"
+
 # install or update powerlevel10k
+echo -n "install powerlevel10k : "
 if [ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]
 then
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    git clone -q --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 else
-    git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
+    git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull -q
 fi
+echo "OK"
 
 # post installation
 cd post-install
 for script in $(ls)
 do
+    echo -n "post-install $script : "
     ./$script
+    echo "OK"
 done
 cd --
