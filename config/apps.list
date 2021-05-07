@@ -13,7 +13,7 @@ gnome-themes-standard
 imagemagick
 keepassxc
 libglib2.0-bin
-libpango1.0-0
+libpango-1.0-0
 libpangox-1.0-0
 libx11-dev
 libxft-dev
