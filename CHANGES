@@ -1,3 +1,7 @@
+Version 1.30.3:
+ - Reformat dwm config
+ - Zoom ST terminal with Ctrl+  Ctrl- Ctrl0 (reset)
+
 Version 1.30.2:
  - Fix zshrc prioritize launching X
 
