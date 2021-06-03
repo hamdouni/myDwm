@@ -1,15 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 3;        /* border pixel of windows */
-static const unsigned int snap     = 32;       /* snap pixel */
-static const unsigned int gappx     = 8;        /* gap pixel between windows */
-static const int showbar           = 1;        /* 0 means no bar */
-static const int topbar            = 1;        /* 0 means bottom bar */
-//static const char *fonts[]         = { "3270Medium Nerd Font Mono:size=16" };
-static const char *fonts[]         = {  "FontAwesome:size=16","3270Medium Nerd Font Mono:size=16"};
-static const char dmenuprompt[] 	= "Cmd>> ";
-static const char dmenulines[] 		= "20";
+static const unsigned int borderpx = 3;  /* border pixel of windows */
+static const unsigned int snap     = 32; /* snap pixel */
+static const unsigned int gappx    = 8;  /* gap pixel between windows */
+static const int showbar           = 1;  /* 0 means no bar */
+static const int topbar            = 1;  /* 0 means bottom bar */
+static const char *fonts[]         = { "FontAwesome:size=16","3270Medium Nerd Font Mono:size=16" };
+static const char dmenuprompt[]    = "exec:";
+static const char dmenulines[] 	   = "20";
 static const char dmenufont[]      = "3270Medium Nerd Font Mono:size=16";
 static const char normbgcol[]      = "#000000"; /* fond bar */
 static const char normfgcol[]      = "#a0a0a0"; /* text bar */
@@ -38,14 +37,14 @@ static const Rule rules[] = {
 	/* class      		instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     		NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Update-manager", NULL, 		NULL,		0,          True,	  	-1 },
-	{ "KeePassXC",		NULL,		NULL,		0,			1,			-1},
+	{ "Update-manager", NULL, 		NULL,		0,            True,	  	   -1 },
+	{ "KeePassXC",		NULL,		NULL,		0,			  1,           -1},
 };
 
 /* layout(s) */
-static const float mfact      = 0.5; /* factor of master area size [0.05..0.95] */
-static const int nmaster      = 1;    /* number of clients in master area */
-static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
+static const float mfact         = 0.5;  /* factor of master area size [0.05..0.95] */
+static const int nmaster         = 1;    /* number of clients in master area */
+static const Bool resizehints    = True; /* True means respect size hints in tiled resizals */
 static const int attachdirection = 4;    /* 0 default, 1 above, 2 aside, 3 below, 4 bottom, 5 top */
 
 static const Layout layouts[] = {
@@ -68,36 +67,38 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", dmenuprompt, "-l", dmenulines, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
-static const char *termcmd[]  = { "x-terminal-emulator", "-e", "terminal.sh", NULL };
+static const char *play[] = { "audio","g",NULL };
+static const char *next[] = { "audio","n",NULL };
+static const char *prev[] = { "audio","p",NULL };
 static const char *voldown[]  = { "audio","-",NULL };
 static const char *volup[]    = { "audio","+",NULL };
 static const char *volmute[]  = { "audio","m",NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", dmenuprompt, "-l", dmenulines, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
+static const char *termcmd[]  = { "x-terminal-emulator", "-e", "terminal.sh", NULL };
 static const char *filemanager[] = { "x-file-manager",NULL };
-static const char *prev[] = { "audio","p",NULL };
-static const char *next[] = { "audio","n",NULL };
-static const char *play[] = { "audio","g",NULL };
 static const char *browser[] = { "x-www-browser", NULL };
 static const char *slock[] = { "slock", NULL };
 static const char *screenshot[] = { "myScreenshot", NULL };
 static const char *passwordmngt[] = { "keepassxc", NULL } ;
 
-
-
 static Key keys[] = {
 	/* modifier                     key           function        argument */
-	{ 0,							0x1008ff17,	  spawn,	      {.v = next} },
+
+	/* Control audio with Ctrl and function keys */
 	{ ControlMask,					XK_F6,		  spawn,	      {.v = next} },
-	{ 0,							0x1008ff16,	  spawn,	      {.v = prev} },
 	{ ControlMask,					XK_F4,		  spawn,	      {.v = prev} },
-	{ 0,							0x1008ff14,	  spawn,	      {.v = play} },
 	{ ControlMask,					XK_F5,		  spawn,	      {.v = play} },
-	{ 0,							0x1008ff11,	  spawn,	      {.v = voldown} },
 	{ ControlMask,					XK_F2,		  spawn,	      {.v = voldown} },
-	{ 0,							0x1008ff13,	  spawn,	      {.v = volup} },
 	{ ControlMask,					XK_F3,		  spawn,	      {.v = volup} },
-	{ 0,							0x1008ff12,	  spawn,	      {.v = volmute} },
 	{ ControlMask,					XK_F1,		  spawn,	      {.v = volmute} },
+	/* Control audio with multimedia keys */
+	{ 0,							0x1008ff17,	  spawn,	      {.v = next} },
+	{ 0,							0x1008ff16,	  spawn,	      {.v = prev} },
+	{ 0,							0x1008ff14,	  spawn,	      {.v = play} },
+	{ 0,							0x1008ff11,	  spawn,	      {.v = voldown} },
+	{ 0,							0x1008ff13,	  spawn,	      {.v = volup} },
+	{ 0,							0x1008ff12,	  spawn,	      {.v = volmute} },
+	/* Shortcuts to usefull commands */
 	{ 0,							XK_Print,	  spawn,	      {.v = screenshot} },
 	{ MODKEY,                       XK_p,         spawn,          {.v = passwordmngt } },
 	{ MODKEY,                       XK_s,  	      spawn,          {.v = slock } },
@@ -105,6 +106,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,    spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,         spawn,          {.v = filemanager } },
 	{ MODKEY,                       XK_g,         spawn,          {.v = browser } },
+	/* Windows management */
 	{ MODKEY,                       XK_b,         togglebar,      {0} },
 	{ MODKEY,                       XK_Tab,       focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Tab,       focusstack,     {.i = -1 } },
@@ -153,4 +155,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
