@@ -1,3 +1,6 @@
+Version 1.30.4:
+ - Use underline as cursor in st terminal
+
 Version 1.30.3:
  - Reformat dwm config
  - Zoom ST terminal with Ctrl+  Ctrl- Ctrl0 (reset)
