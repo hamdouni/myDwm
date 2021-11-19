@@ -28,6 +28,7 @@
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
+    "terminal.integrated.tabs.enabled": false,
     "explorer.openEditors.visible": 0,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
