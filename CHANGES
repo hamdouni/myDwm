@@ -1,3 +1,6 @@
+Version 1.32.2:
+ - vscode: do not use terminal persistent sessions
+
 Version 1.32.1:
  - fix: remove terminal tabs
 
