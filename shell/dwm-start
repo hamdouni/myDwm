@@ -33,6 +33,7 @@ xfce4-power-manager &           # powermanagement
 xrdb -load ~/.Xresources        # x resources
 /usr/bin/start-pulseaudio-x11 & # sound server
 /usr/bin/owncloud &             # owncloud
+/usr/bin/lxpolkit &             # ask for auth if necessary
 
 # compositor for transparency
 compton &
