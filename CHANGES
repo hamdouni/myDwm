@@ -1,3 +1,6 @@
+Version 1.36.1:
+ - Border 9 instead of 3
+
 Version 1.36:
  - Integrate fzf
 
