@@ -1,3 +1,6 @@
+Version 1.36:
+ - Integrate fzf
+
 Version 1.35:
  - More concize gh git log alias
 
