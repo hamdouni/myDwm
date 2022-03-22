@@ -1,6 +1,7 @@
-#!sh
+#!/bin/sh
 
 # Update visual studio code to latest version for Linux X64.
 
+mkdir -p ~/.local/bin/apps/
 curl -L https://code.visualstudio.com/sha/download\?build\=stable\&os\=linux-x64 | tar xfz - -C ~/.local/bin/apps/
 

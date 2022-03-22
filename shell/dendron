@@ -1,4 +1,4 @@
-#!sh
+#!/bin/sh
 
 # Open Dendron workplace in a new Code instance.
 # Specify Dendrond extensions directory.

@@ -1,4 +1,4 @@
-#!sh
+#!/bin/sh
 
 # Force Code to open with the default user data dir.
 # Make it possible to have multiple instances.
