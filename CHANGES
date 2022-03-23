@@ -1,3 +1,12 @@
+Version 1.37:
+ - vscode: theme terminal monochrome in settings
+ - fzf: adapt install to add PATH env (for go)
+ - fzf: add Makefile to build and install
+ - terminal: add cool-retro-term on CMD+o for old
+ - slstatus: use "mainlan" as lan name
+ - new class name for keepasxc window
+ - adjust absolute path to shell
+
 Version 1.36.1:
  - Border 9 instead of 3
 
