@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/sh
 
 # clean old apps and webapps and shell scripts
 echo -n "cleaning : "
@@ -39,7 +39,7 @@ for src in $(ls)
 do
     echo -n "make and install $src : "
     cd $src 
-    make -s && sudo make -s install && make -s clean 
+    make -s && sudo "PATH=$PATH" make -s install && make -s clean 
     cd ..
     echo "OK"
 done
