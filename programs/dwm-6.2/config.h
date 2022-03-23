@@ -73,6 +73,7 @@ static const char *volup[]    = { "audio","+",NULL };
 static const char *volmute[]  = { "audio","m",NULL };
 static const char *dmenucmd[] = { "dmenu_run", "-p", dmenuprompt, "-l", dmenulines, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbgcol, "-sf", selfgcol, NULL };
 static const char *termcmd[]  = { "x-terminal-emulator", "-e", "terminal.sh", NULL };
+static const char *retroterm[] = { "cool-retro-term", NULL };
 static const char *filemanager[] = { "x-file-manager",NULL };
 static const char *browser[] = { "x-www-browser", NULL };
 static const char *slock[] = { "slock", NULL };
@@ -104,6 +105,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,    spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,         spawn,          {.v = filemanager } },
 	{ MODKEY,                       XK_g,         spawn,          {.v = browser } },
+	{ MODKEY,                       XK_o,         spawn,          {.v = retroterm } },
 	/* Windows management */
 	{ MODKEY,                       XK_b,         togglebar,      {0} },
 	{ MODKEY,                       XK_Tab,       focusstack,     {.i = +1 } },
