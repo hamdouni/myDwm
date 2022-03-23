@@ -4,7 +4,7 @@
 #define UPDATE_INTERVAL 1
 
 /* text to show if no value can be retrieved */
-#define UNKNOWN_STR     "n/a"
+#define UNKNOWN_STR     ""
 
 /* statusbar
 - battery_perc (battery percentage) [argument: battery name]
@@ -46,9 +46,9 @@ static const struct arg args[] = {
 	{ cpu_perc,    "  %s ",  NULL },
 	{ run_command, "  %s°C ", "cputemp" },
 	{ ram_used,    "  %s GB", NULL },
-	{ ip,          "  %s ", "wlan0" },
-	{ wifi_essid,  "%s ", "wlan0" },
-	{ wifi_perc,   "%s", "wlan0" },
+	{ ip,          "  %s ", "mainlan" },
+	{ wifi_essid,  "%s ", "mainlan" },
+	{ wifi_perc,   "%s", "mainlan" },
 	{ datetime,    "  %s",   "%d/%m/%y  %T" },
 	{ echo,        "  v%s", VERSION },
 };
