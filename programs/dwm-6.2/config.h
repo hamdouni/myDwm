@@ -36,7 +36,7 @@ static const Rule rules[] = {
 	 */
 	/* class      		instance    title       tags mask     isfloating   monitor */
 	{ "Update-manager", NULL, 		NULL,		0,            1,	  	   -1 },
-	{ "KeePassXC",		NULL,		NULL,		0,			  1,           -1},
+	{ "keepassxc",		NULL,		NULL,		0,			  1,           -1},
 };
 
 /* layout(s) */
