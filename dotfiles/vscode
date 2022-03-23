@@ -47,4 +47,5 @@
     "go.formatTool": "goimports",
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.persistentSessionReviveProcess": "never",
+    "workbench.colorTheme": "Terminal Monochrome",
 }
