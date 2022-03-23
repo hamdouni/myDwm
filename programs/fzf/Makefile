@@ -9,9 +9,9 @@ clean:
 	rm -f fzf
 
 install:
+	chmod 755 fzf
 	mkdir -p ${PREFIX}/bin
 	cp -f fzf ${PREFIX}/bin
-	chmod 755 ${PREFIX}/bin/fzf
 
 uninstall:
 	rm -f ${PREFIX}/bin/fzf
