@@ -89,7 +89,7 @@ call KeyMap("C-q", ":call MyQuit()<enter>")
 """ Color Scheme
 se background=dark
 hi Comment ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-colorscheme monokai
+colorscheme default
 " Invisible character colors 
 hi NonText guifg=#4a4a59 ctermfg=244
 hi SpecialKey guifg=#4a4a59 ctermfg=244
