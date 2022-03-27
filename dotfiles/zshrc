@@ -1,7 +1,5 @@
 # User configuration
 export TERM=xterm-256color
-export GOPATH=/usr/local
-export CDPATH=~/projects
 export LS_COLORS="di=1;36:ln=35:so=35:pi=35:ex=32:bd=35:cd=35:su=1;32:sg=1;32:tw=36:ow=36"
 export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 export LANG=fr_FR.UTF-8
@@ -34,9 +32,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#777"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-
-# CD to the previous folder
-cd $OLDPWD
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
