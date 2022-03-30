@@ -47,8 +47,6 @@ static const struct arg args[] = {
 	{ run_command, "  %s°C ", "cputemp" },
 	{ ram_used,    "  %s GB", NULL },
 	{ ip,          "  %s ", "mainlan" },
-	{ wifi_essid,  "%s ", "mainlan" },
-	{ wifi_perc,   "%s", "mainlan" },
 	{ datetime,    "  %s",   "%d/%m/%y  %T" },
 	{ echo,        "  v%s", VERSION },
 };
