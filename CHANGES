@@ -1,3 +1,9 @@
+Version 1.38:
+ - slstatus: do not show wifi essid
+ - restore GOPATH
+ - shell: remove CDPATH
+ - vi: default color scheme
+
 Version 1.37:
  - vscode: theme terminal monochrome in settings
  - fzf: adapt install to add PATH env (for go)
