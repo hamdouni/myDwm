@@ -1,3 +1,6 @@
+Version 1.38.1:
+ - no need to launch gnome-keyring in xinitrc
+
 Version 1.38:
  - slstatus: do not show wifi essid
  - restore GOPATH
