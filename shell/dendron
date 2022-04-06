@@ -3,4 +3,4 @@
 # Open Dendron workplace in a new Code instance.
 # Specify Dendrond extensions directory.
 
-code-app --user-data-dir ~/.dendron/data --extensions-dir ~/.dendron/extensions ~/docs/notes/dendron.code-workspace
+code-app --sync off --user-data-dir ~/.dendron/data --extensions-dir ~/.dendron/extensions ~/docs/notes/dendron.code-workspace

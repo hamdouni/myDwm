@@ -3,4 +3,4 @@
 # Force Code to open with the default user data dir.
 # Make it possible to have multiple instances.
 
-code-app --user-data-dir ~/.config/Code $*
+code-app --sync off --user-data-dir ~/.config/Code $*
