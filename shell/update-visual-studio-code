@@ -1,7 +1,21 @@
 #!/bin/sh
 
-# Update visual studio code to latest version for Linux X64.
+# Update VS Codium to latest version for Linux X64
+# inplace of visual studio code
+# (depends on jq)
 
-mkdir -p ~/.local/bin/apps/
-curl -L https://code.visualstudio.com/sha/download\?build\=stable\&os\=linux-x64 | tar xfz - -C ~/.local/bin/apps/
+repo=https://raw.githubusercontent.com/VSCodium/versions/master/linux/x64/latest.json
+
+mkdir -p ~/.local/bin/apps/VSCode-linux-x64 && \
+rm -rf ~/.local/bin/apps/VSCode-linux-x64/* && \
+curl -sL $repo | \
+jq .url | \
+xargs curl -sL | \
+tar xfz - -C ~/.local/bin/apps/VSCode-linux-x64
+
+ln -s ~/.vscode/ ~/.vscode-oss 
+ln -s ~/.config/Code/ ~/.VSCodium 
+
+
+
 
