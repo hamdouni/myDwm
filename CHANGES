@@ -1,3 +1,6 @@
+Version 1.39:
+ - switch to VSCodium
+
 Version 1.38.2:
  - vscode: start with sync off
 
