@@ -8,7 +8,7 @@ XTerm*faceSize: 20
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.antialias: 0
-Xft.dpi: 114
+Xft.dpi: 96
 ! Zoom ctrl +/-
 XTerm.vt100.translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
