@@ -1,3 +1,6 @@
+Version 1.39.1:
+ - link to VSCode path only if exists
+
 Version 1.39:
  - switch to VSCodium
 

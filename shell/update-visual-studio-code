@@ -13,5 +13,5 @@ jq .url | \
 xargs curl -sL | \
 tar xfz - -C ~/.local/bin/apps/VSCode-linux-x64
 
-if [ -e ~/.vscode ]; then ln -s ~/.vscode ~/.vscode-oss; fi
-if [ -e ~/.config/Code]; then ln -s ~/.config/Code ~/.VSCodium; fi
+if [ -e ~/.vscode ]; then ln -sf ~/.vscode ~/.vscode-oss; fi
+if [ -e ~/.config/Code ]; then ln -sf ~/.config/Code ~/.VSCodium; fi
