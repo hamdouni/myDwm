@@ -71,6 +71,17 @@ If the file exists, it will be executed at xinit, and if not, there is a minimal
 
 *TIPS* : you can use arandr to generate the correct screen layout shell command.
 
+## HiDPI display
+
+You can change the dpi value with a .dpi file in your home
+
+```sh
+cat ~/.dpi
+114
+``` 
+
+This value will be used to change the .Xresources file.
+
 ## Make and install
 
 ```sh
