@@ -2,8 +2,7 @@
 {
     "files.associations": {
         "*.rsp": "html",
-        "*.r": "red",
-        "*.svelte": "html"
+        "*.r": "red"
     },
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
