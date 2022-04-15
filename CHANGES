@@ -1,3 +1,7 @@
+Version 1.42.1:
+ - add: install minify
+ - fix: remove vscode svelte html association
+
 Version 1.42:
  - st: blinking cursor
 
