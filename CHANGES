@@ -1,3 +1,9 @@
+Version 1.42.2:
+ - add: expect
+ - 1.42.1
+ - add: install minify
+ - 1.42.1
+
 Version 1.42.1:
  - add: install minify
  - fix: remove vscode svelte html association
