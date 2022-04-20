@@ -1,6 +1,6 @@
 # See LICENSE file for copyright and license details.
 
-PREFIX = /usr
+PREFIX = /usr/local
 
 all: 
 	go build -o fzf cmd/fzf.go
