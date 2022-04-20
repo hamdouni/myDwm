@@ -1,3 +1,20 @@
+Version 1.43.1:
+ - fix: dwm.desktop must be installed in secure mode
+ - 1.43
+ - make it compatible with login managers
+ - install fzf in /usr/local
+ - install build-essential and go
+ - make /usr/local mine
+ - add golang ubuntu repo
+ - 1.43
+ - make it compatible with login managers
+ - install fzf in /usr/local
+ - install build-essential and go
+ - make /usr/local mine
+ - add golang ubuntu repo
+ - 1.42.2
+ - add: expect
+
 Version 1.43:
  - make it compatible with login managers
  - install fzf in /usr/local
