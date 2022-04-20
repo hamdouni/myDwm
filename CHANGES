@@ -1,8 +1,13 @@
+Version 1.43:
+ - make it compatible with login managers
+ - install fzf in /usr/local
+ - install build-essential and go
+ - make /usr/local mine
+ - add golang ubuntu repo
+ - install owncloud
+
 Version 1.42.2:
  - add: expect
- - 1.42.1
- - add: install minify
- - 1.42.1
 
 Version 1.42.1:
  - add: install minify
