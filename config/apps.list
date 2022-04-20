@@ -1,3 +1,5 @@
+build-essential 
+golang-go
 apt-transport-https
 blueman
 ca-certificates curl 
@@ -42,3 +44,5 @@ cool-retro-term
 jq
 ripgrep
 minify
+owncloud-client
+
