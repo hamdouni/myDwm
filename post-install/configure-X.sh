@@ -16,3 +16,6 @@ if [ -e ~/.dpi ]; then
     dpi=`cat ~/.dpi | tr -d "\n "`
     sed -i "s/Xft.dpi: [0-9]*/Xft.dpi: $dpi/" ~/.Xresources
 fi
+
+# link to use zsh and a login manager
+ln -sf ~/.profile ~/.zprofile
