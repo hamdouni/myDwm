@@ -1,2 +1,3 @@
 environment:/etc/environment
 sudoers:/etc/sudoers
+dwm.desktop:/usr/share/xsessions/dwm.desktop
