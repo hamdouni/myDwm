@@ -58,22 +58,31 @@
   * shift + ² : toggle into terminal
   * ctrl + shift + ² : create new terminal
 
+* Vim keybindings (from any mode : insert, normal or visual)
+* Ctrl B : Build Go program
+* Ctrl R : Run Go program
+* Ctrl S : Save the file
+* Ctrl F : Find text
+* Ctrl H : Replace text
+* Ctrl Q : Secure quit
+* Ctrl I : Toggle show invisible characters
+
+
 ## Terminal
 
-It uses st (suckless terminal) with patch alpha for transparency and anysize so the st window take all available place. 
-
-Tmux is used as the multiplexer (scroll, splitting, etc...) with prefix CTRL+A to differenciate from remote session on default CTRL+B.
+- st (suckless terminal) with patch alpha for transparency and anysize so the st window take all available place. 
+- Tmux as multiplexer (scroll, splitting, etc...) with prefix CTRL+A to differenciate from remote session on default CTRL+B.
 
 ## Screen Layout
 
-You can configure your screen layout by placing a shell file "main.sh" in the folder ".screenlayout" in your home directory.
+Configure your screen layout by placing a shell file "main.sh" in the folder ".screenlayout" in your home directory.
 If the file exists, it will be executed at xinit, and if not, there is a minimal fall back inside the .xinitrc file.
 
 *TIPS* : you can use arandr to generate the correct screen layout shell command.
 
 ## HiDPI display
 
-You can change the dpi value with a .dpi file in your home
+Change the dpi value with a .dpi file in your home
 
 ```sh
 cat ~/.dpi
@@ -85,7 +94,7 @@ This value will be used to change the .Xresources file.
 ## Make and install
 
 ```sh
-    ./install
+./install
 ```
 
 * Clean unwanted apps and shell scripts.
@@ -97,19 +106,18 @@ This value will be used to change the .Xresources file.
 ## Bump version
 
 ```sh
-./bumpversion.sh && ./install
+./bumpversion.sh
 ```
 
 Accept the suggestion (patch increment) or type the new version.
-It will update version in slstatus so it is displayed in status bar.
-Then install.
+Updates the version in slstatus to be displayed in the status bar.
 
 ## Troubleshoot
 
 Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding "freetype/config/ftheader.h" then create the symbolic link as below :
 
 ```sh
-        sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
+sudo ln -s /usr/include/freetype2/freetype/ /usr/include/
 ```
 
 ## How to install new alternative "x-file-manager" ?
@@ -117,14 +125,14 @@ Linux user : if you got a fatal error on "/usr/include/ft2build.h", not finding 
 For example, to install thunar as an alternative for x-file-manager :
 
 ```sh
-        # For thunar
-        sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
-        sudo update-alternatives --set x-file-manager /usr/bin/thunar
-        
-        # For nautilus (install alternative and prevent nautilus to open desktop) 
-        sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/nautilus 1000
-        sudo update-alternatives --set x-file-manager /usr/bin/nautilus
-        gsettings set org.gnome.desktop.background show-desktop-icons false
+# For thunar
+sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/thunar 1000
+sudo update-alternatives --set x-file-manager /usr/bin/thunar
+
+# For nautilus (install alternative and prevent nautilus to open desktop) 
+sudo update-alternatives --install /usr/bin/x-file-manager x-file-manager /usr/bin/nautilus 1000
+sudo update-alternatives --set x-file-manager /usr/bin/nautilus
+gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
 
 ## How to set the same font in DWM/Xft and in GTK apps ?
@@ -132,6 +140,6 @@ For example, to install thunar as an alternative for x-file-manager :
 For example, if we want the 'Ubuntu Mono' font at size 12 :
 
 ```sh
-        gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
 ```
 
