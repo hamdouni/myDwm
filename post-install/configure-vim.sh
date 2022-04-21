@@ -8,8 +8,10 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]
 then
     mkdir -p ~/.vim/bundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
 fi
+
+# install plugins
+vim +PluginInstall +qall
 
 # set as default editor
 sudo update-alternatives --set editor /usr/bin/vim.basic

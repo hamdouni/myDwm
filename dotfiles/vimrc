@@ -10,7 +10,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()            " required
+Plugin 'junegunn/fzf'
+" required
+call vundle#end()            
 
 se nocompatible
 se nowrap
@@ -24,7 +26,7 @@ se ttyfast 			            " Faster redraw
 se shortmess+=I 		        " No intro when starting Vim
 se smartindent 		            " Smart... indent
 se incsearch 			        " Search as typing
-se hlsearch 			        " Highlight search results
+se nohlsearch 			        " No highlight search results
 se showmatch 			        " When a bracket is inserted, briefly jump to the matching one
 se matchtime=3 		            " ... during this time
 se virtualedit=onemore 	        " Allow the cursor to move just past the end of the line
@@ -84,11 +86,11 @@ endfunction
 
 """ Key mappings
 call KeyMap("C-b", "<Plug>(go-build)", "go")    " Ctrl B - vim-go build
-call KeyMap("C-r", "<Plug>(go-run)", "go")      " Ctrl R - vim-go run
 call KeyMap("C-s", ":w<enter>")                 " Ctrl S - Save
 call KeyMap("C-f", "/")                         " Ctrl F - Find
 call KeyMap("C-h", ":%s/")                      " Ctrl H - Search and Replace
 call KeyMap("C-q", ":call MyQuit()<enter>")     " Ctrl Q - Quit
+call KeyMap("C-p", ":FZF<enter>")
 
 """ Color Scheme
 colorscheme monokai
