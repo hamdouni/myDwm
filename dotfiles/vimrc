@@ -20,35 +20,35 @@ se clipboard=unnamedplus
 se laststatus=2
 se cursorline
 se gfn=DejaVu\ Sans\ Mono\ 12
-se ttyfast 			    " Faster redraw
-se shortmess+=I 		" No intro when starting Vim
-se smartindent 		    " Smart... indent
-se incsearch 			" Search as typing
-se hlsearch 			" Highlight search results
-se showmatch 			" When a bracket is inserted, briefly jump to the matching one
-se matchtime=3 		    " ... during this time
-se virtualedit=onemore 	" Allow the cursor to move just past the end of the line
-se history=100 		    " Keep 100 undo
-se wildmenu 			" Better command-line completion
-se scrolloff=10 		" Always keep 10 lines after or before when scrolling
-se sidescrolloff=5 		" Always keep 5 lines after or before when side scrolling
-se noshowmode 			" Don't display the current mode
-se gdefault 			" The substitute flag g is on
-se hidden 			    " Hide the buffer instead of closing when switching
+se ttyfast 			            " Faster redraw
+se shortmess+=I 		        " No intro when starting Vim
+se smartindent 		            " Smart... indent
+se incsearch 			        " Search as typing
+se hlsearch 			        " Highlight search results
+se showmatch 			        " When a bracket is inserted, briefly jump to the matching one
+se matchtime=3 		            " ... during this time
+se virtualedit=onemore 	        " Allow the cursor to move just past the end of the line
+se history=100 		            " Keep 100 undo
+se wildmenu 			        " Better command-line completion
+se scrolloff=10 		        " Always keep 10 lines after or before when scrolling
+se sidescrolloff=5 		        " Always keep 5 lines after or before when side scrolling
+se noshowmode 			        " Don't display the current mode
+se gdefault 			        " The substitute flag g is on
+se hidden 			            " Hide the buffer instead of closing when switching
 se backspace=indent,eol,start 	" The normal behaviour of backspace
-se updatetime=1000
-se ignorecase 			" Search insensitive
-se smartcase 			" ... but smart
-se encoding=utf-8  		" The encoding displayed.
-se fileencoding=utf-8  	" The encoding written to file.
-se synmaxcol=300 		" Don't try to highlight long lines
-se autowrite			" A build automatically saves the file
+se ignorecase 			        " Search insensitive
+se smartcase 			        " ... but smart
+se encoding=utf-8  		        " The encoding displayed.
+se fileencoding=utf-8  	        " The encoding written to file.
+se synmaxcol=300 		        " Don't try to highlight long lines
+se autowrite			        " A build automatically saves the file
+se listchars=tab:▸\ ,eol:¬      " Use the same symbols as TextMate for tabstops and EOLs
 se tabstop=4
 se shiftwidth=4
 se softtabstop=4
 se expandtab
-" Use the same symbols as TextMate for tabstops and EOLs
-se listchars=tab:▸\ ,eol:¬
+se updatetime=1000
+se path+=**
 
 """ Prevent lag when hitting escape
 se ttimeoutlen=0
@@ -83,27 +83,12 @@ function! MyQuit()
 endfunction
 
 """ Key mappings
-" Ctrl B - vim-go build
-call KeyMap("C-b", "<Plug>(go-build)", "go")
-" Ctrl R - vim-go run
-call KeyMap("C-r", "<Plug>(go-run)", "go")
-" Ctrl S - Save
-call KeyMap("C-s", ":w<enter>") 
-" Ctrl F - Find
-call KeyMap("C-f", "/")
-" Ctrl H - Search and Replace
-call KeyMap("C-h", ":%s/")
-" Ctrl Q - Quit
-call KeyMap("C-q", ":call MyQuit()<enter>")
+call KeyMap("C-b", "<Plug>(go-build)", "go")    " Ctrl B - vim-go build
+call KeyMap("C-r", "<Plug>(go-run)", "go")      " Ctrl R - vim-go run
+call KeyMap("C-s", ":w<enter>")                 " Ctrl S - Save
+call KeyMap("C-f", "/")                         " Ctrl F - Find
+call KeyMap("C-h", ":%s/")                      " Ctrl H - Search and Replace
+call KeyMap("C-q", ":call MyQuit()<enter>")     " Ctrl Q - Quit
 
 """ Color Scheme
-se background=dark
-hi Comment ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
-colorscheme default
-" Invisible character colors 
-hi NonText guifg=#4a4a59 ctermfg=244
-hi SpecialKey guifg=#4a4a59 ctermfg=244
-" Focused line
-hi CursorLine cterm=NONE ctermbg=238
-" Selected lines
-hi visual cterm=NONE ctermbg=238
+colorscheme monokai
