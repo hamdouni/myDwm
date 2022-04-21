@@ -2,6 +2,16 @@ filetype off
 filetype plugin indent on
 syntax enable 			" Enable syntax highlights
 
+" vundle plugins manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" plugins
+Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+call vundle#end()            " required
+
 se nocompatible
 se nowrap
 se t_Co=256
