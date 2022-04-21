@@ -86,6 +86,7 @@ endfunction
 
 """ Key mappings
 call KeyMap("C-b", "<Plug>(go-build)", "go")    " Ctrl B - vim-go build
+call KeyMap("F12", ":GoDef<enter>","go")        " F12    - vim-go to definition
 call KeyMap("C-s", ":w<enter>")                 " Ctrl S - Save
 call KeyMap("C-f", "/")                         " Ctrl F - Find
 call KeyMap("C-h", ":%s/")                      " Ctrl H - Search and Replace
