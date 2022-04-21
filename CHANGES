@@ -1,3 +1,6 @@
+Version 1.43.2:
+ - vim: fix install plugins
+
 Version 1.43.1:
  - fix: dwm.desktop must be installed in secure mode
  - 1.43
