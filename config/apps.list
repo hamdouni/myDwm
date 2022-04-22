@@ -46,3 +46,6 @@ ripgrep
 minify
 expect
 owncloud-client
+v4l-utils
+v4l2loopback-dkms
+
