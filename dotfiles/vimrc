@@ -11,6 +11,7 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf'
+Plugin 'tpope/vim-commentary'
 " required
 call vundle#end()            
 
@@ -91,7 +92,12 @@ call KeyMap("C-s", ":w<enter>")                 " Ctrl S - Save
 call KeyMap("C-f", "/")                         " Ctrl F - Find
 call KeyMap("C-h", ":%s/")                      " Ctrl H - Search and Replace
 call KeyMap("C-q", ":call MyQuit()<enter>")     " Ctrl Q - Quit
-call KeyMap("C-p", ":FZF<enter>")
+call KeyMap("C-p", ":FZF<enter>")               " Ctrl P - FZF Search
+
+""" dedicated key mappings for Commentary =>    Ctrl /
+imap <c-_> <Esc><Plug>CommentaryLineA
+nmap <c-_> <Plug>CommentaryLine
+xmap <c-_> <Plug>Commentary
 
 """ Color Scheme
 colorscheme monokai
