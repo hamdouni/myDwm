@@ -1,3 +1,18 @@
+Version 1.44:
+ - vim: move lines
+ - vim: add Commentary Ctrl / to comment
+ - dwm: change rule for keepassxc: class -> instance
+ - git: ignore vim swap files
+ - install video utils
+ - vim: vim-go F12 go to definition
+ - vim: fzf plugin map to ctrl+p
+ - clean vimrc
+ - fix: install vim plugins
+ - 1.43.2
+ - vim: fix install plugins
+ - 1.43.2
+ - vim: fix install plugins
+
 Version 1.43.2:
  - vim: fix install plugins
 
