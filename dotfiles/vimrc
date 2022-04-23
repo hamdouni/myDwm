@@ -85,27 +85,31 @@ function! MyQuit()
 	endif
 endfunction
 
-""" Key mappings
-call KeyMap("C-b", "<Plug>(go-build)", "go")    " Ctrl B - vim-go build
-call KeyMap("F12", ":GoDef<enter>","go")        " F12    - vim-go to definition
+""" General Key mappings
+call KeyMap("F1",  ":cwin<enter>")              " F1     - Show Quickfix
 call KeyMap("C-s", ":w<enter>")                 " Ctrl S - Save
 call KeyMap("C-f", "/")                         " Ctrl F - Find
 call KeyMap("C-h", ":%s/")                      " Ctrl H - Search and Replace
-call KeyMap("C-q", ":call MyQuit()<enter>")     " Ctrl Q - Quit
-call KeyMap("C-p", ":FZF<enter>")               " Ctrl P - FZF Search
+call KeyMap("C-q", ":call ConfirmQuit()<enter>")     " Ctrl Q - Quit
+call KeyMap("C-p", ":FZF<enter>")               " Ctrl P - Fuzzy finder
+call KeyMap("C-z", ":undo<enter>")              " Ctrl Z - Undo
+""" Follow links in markdown                    " Ctrl l - Follow wiki links
+call KeyMap("c-l", "yi]:e <c-r>\".md<enter>", "markdown") 
+""" Key mappings for Go
+call KeyMap("F2",  ":GoRename<enter>","go")     " F2     - vim-go to rename
+call KeyMap("F12", ":GoDef<enter>","go")        " F12    - vim-go to definition
+call KeyMap("C-b", "<Plug>(go-build)", "go")    " Ctrl B - vim-go build
 """ key mappings for Commentary                 " Ctrl / - Comment line or selection
 imap <c-_> <Esc><Plug>CommentaryLineA
 nmap <c-_> <Plug>CommentaryLine
 xmap <c-_> <Plug>Commentary
-""" key mapping for moving lines                " Ctrl j/k - Move line or selection
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-""" vim-links
-call KeyMap("c-l", "yi]:e <c-r>\".md<enter>", "markdown") " Ctrl l - Follow wiki links
+""" key mapping for moving lines                " Ctrl up/down - Move line or selection
+nnoremap <C-down> :m .+1<CR>==
+inoremap <C-down> <Esc>:m .+1<CR>==gi
+vnoremap <C-down> :m '>+1<CR>gv=gv
+nnoremap <C-up> :m .-2<CR>==
+inoremap <C-up> <Esc>:m .-2<CR>==gi
+vnoremap <C-up> :m '<-2<CR>gv=gv
 
 """ Color Scheme
 colorscheme monokai
