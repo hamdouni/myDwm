@@ -8,6 +8,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " plugins
 Plugin 'fatih/vim-go'
+Plugin 'fatih/molokai'
+Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf'
@@ -46,11 +48,15 @@ se fileencoding=utf-8  	        " The encoding written to file.
 se synmaxcol=300 		        " Don't try to highlight long lines
 se autowrite			        " A build automatically saves the file
 se listchars=tab:▸\ ,eol:¬      " Use the same symbols as TextMate for tabstops and EOLs
+se colorcolumn=80               " Mark 80th column
+se signcolumn=yes               " Enough left space to indicators
+se nu                           " Show number line
+
 se tabstop=4
 se shiftwidth=4
 se softtabstop=4
 se expandtab
-se updatetime=1000
+se updatetime=100
 se path+=**
 
 """ Prevent lag when hitting escape
@@ -75,7 +81,7 @@ function! KeyMap(keys, cmd, ...)
 endfunction
 
 """ Secure quit
-function! MyQuit()
+function! ConfirmQuit()
 	if &modified
 		if (confirm("QUIT WITHOUT SAVING ?", "&Yes\n&No", 2)==1)
 			q!
@@ -112,7 +118,11 @@ inoremap <C-up> <Esc>:m .-2<CR>==gi
 vnoremap <C-up> :m '<-2<CR>gv=gv
 
 """ Color Scheme
-colorscheme monokai
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
 
-
+""" Configure Go default
+let g:go_auto_type_info = 1         " always show info
+let g:go_rename_command = "gopls"   " use gopls to rename
 
