@@ -2,20 +2,34 @@ filetype off
 filetype plugin indent on
 syntax enable 			" Enable syntax highlights
 
-" vundle plugins manager
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-" plugins
-Plugin 'fatih/vim-go'
-Plugin 'fatih/molokai'
-Plugin 'SirVer/ultisnips'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'junegunn/fzf'
-Plugin 'tpope/vim-commentary'
+" vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'fatih/vim-go'
+Plug 'fatih/molokai'
+Plug 'SirVer/ultisnips'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " required
-call vundle#end()            
+call plug#end()            
+
+""" Color Scheme
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
+
+""" Configure Go default
+let g:go_auto_type_info = 1         " always show info
+let g:go_rename_command = "gopls"   " use gopls to rename
 
 se nocompatible
 se nowrap
@@ -50,7 +64,7 @@ se synmaxcol=300 		        " Don't try to highlight long lines
 se autowrite			        " A build automatically saves the file
 se listchars=tab:▸\ ,eol:¬      " Use the same symbols as TextMate for tabstops and EOLs
 se colorcolumn=80               " Mark 80th column
-se signcolumn=yes               " Enough left space to indicators
+se signcolumn=number            " Enough left space to indicators
 se nu                           " Show number line
 
 se tabstop=4
@@ -88,20 +102,34 @@ au InsertLeave * set notimeout
 """ Reopen at last position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-""" Map cmd to keys, with optional file type association
-function! KeyMap(keys, cmd, ...)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" KEY MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Utility to map cmd to keys, with optional file type association
+""" (automatically add a CR and return to correct mode)
+function! KM(keys, cmd, ...)
 	let keys = "<" . a:keys . ">"
 	let filetype = ""
 	if a:0 > 0 
 	       let filetype = "autocmd FileType " . a:1
 	endif
-	execute filetype . " nmap " . keys . " " . a:cmd
-	execute filetype . " imap " . keys . " <esc>" . a:cmd . " i"
-	execute filetype . " vmap " . keys . " <esc>" . a:cmd . " gv"
+	execute filetype . " nnoremap " . keys . " " . a:cmd . "<cr>"
+	execute filetype . " inoremap " . keys . " <esc>" . a:cmd . "<cr> i"
+	execute filetype . " vnoremap " . keys . " <esc>" . a:cmd . "<cr> gv"
+endfunction
+
+""" Simple one to map and wait user interaction 
+""" (no CR and stay in normal mode)
+function! KMI(keys, cmd)
+	let keys = "<" . a:keys . ">"
+	execute "nnoremap " . keys . " " . a:cmd
+	execute "inoremap " . keys . " <esc>" . a:cmd
+	execute "vnoremap " . keys . " <esc>" . a:cmd
 endfunction
 
 """ Secure quit
-function! ConfirmQuit()
+function! Quit()
 	if &modified
 		if (confirm("QUIT WITHOUT SAVING ?", "&Yes\n&No", 2)==1)
 			q!
@@ -112,24 +140,24 @@ function! ConfirmQuit()
 endfunction
 
 """ General Key mappings
-call KeyMap("F1",  ":cwin<enter>")              " F1     - Show Quickfix
-call KeyMap("C-s", ":w<enter>")                 " Ctrl S - Save
-call KeyMap("C-f", "/")                         " Ctrl F - Find
-call KeyMap("C-h", ":%s/")                      " Ctrl H - Search and Replace
-call KeyMap("C-q", ":call ConfirmQuit()<enter>")     " Ctrl Q - Quit
-call KeyMap("C-p", ":FZF<enter>")               " Ctrl P - Fuzzy finder
-call KeyMap("C-z", ":undo<enter>")              " Ctrl Z - Undo
-""" Follow links in markdown                    " Ctrl l - Follow wiki links
-call KeyMap("c-l", "yi]:e <c-r>\".md<enter>", "markdown") 
+call KM("F1",  ":cwin")              " F1     - Show Quickfix
+call KM("C-s", ":w")                 " Ctrl S - Save
+call KMI("C-f", "/")                 " Ctrl F - Find
+call KMI("C-h", ":%s/")              " Ctrl H - Search and Replace
+call KM("C-q", ":call Quit()")       " Ctrl Q - Quit
+call KM("C-p", ":FZF")               " Ctrl P - Fuzzy finder
+call KM("C-z", ":undo")              " Ctrl Z - Undo
+""" Follow links in markdown         " Ctrl l - Follow wiki links
+call KM("c-l", "yi]:e <c-r>\".md", "markdown") 
 """ Key mappings for Go
-call KeyMap("F2",  ":GoRename<enter>","go")     " F2     - vim-go to rename
-call KeyMap("F12", ":GoDef<enter>","go")        " F12    - vim-go to definition
-call KeyMap("C-b", "<Plug>(go-build)", "go")    " Ctrl B - vim-go build
-""" key mappings for Commentary                 " Ctrl / - Comment line or selection
+call KM("F2",  ":GoRename","go")     " F2     - vim-go to rename
+call KM("F12", ":GoDef","go")        " F12    - vim-go to definition
+call KM("C-b", ":GoBuild", "go")     " Ctrl B - vim-go build
+""" key mappings for Commentary      " Ctrl / - Comment line or selection
 imap <c-_> <Esc><Plug>CommentaryLineA
 nmap <c-_> <Plug>CommentaryLine
 xmap <c-_> <Plug>Commentary
-""" key mapping for moving lines                " Ctrl up/down - Move line or selection
+""" key mapping for moving lines     " Ctrl up/down - Move line or selection
 nnoremap <C-down> :m .+1<CR>==
 inoremap <C-down> <Esc>:m .+1<CR>==gi
 vnoremap <C-down> :m '>+1<CR>gv=gv
@@ -137,12 +165,9 @@ nnoremap <C-up> :m .-2<CR>==
 inoremap <C-up> <Esc>:m .-2<CR>==gi
 vnoremap <C-up> :m '<-2<CR>gv=gv
 
-""" Color Scheme
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
-
-""" Configure Go default
-let g:go_auto_type_info = 1         " always show info
-let g:go_rename_command = "gopls"   " use gopls to rename
+""" Special Key mappings in insert mode
+" jj for escape
+inoremap jj <esc>
+" fix ctrl-v by forcing an esc
+inoremap <c-v> <esc>`^<c-v>
 
