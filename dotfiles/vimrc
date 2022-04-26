@@ -60,6 +60,25 @@ se expandtab
 se updatetime=100
 se path+=**
 
+""" swap files in common folders
+let s:VIMROOT = $HOME."/.vim"
+let &runtimepath=s:VIMROOT."," . &runtimepath
+" Create necessary folders if they don't already exist.
+if exists("*mkdir")
+    silent! call mkdir(s:VIMROOT, "p")
+    silent! call mkdir(s:VIMROOT."/bundle", "p")
+    silent! call mkdir(s:VIMROOT."/swap", "p")
+    silent! call mkdir(s:VIMROOT."/undo", "p")
+    silent! call mkdir(s:VIMROOT."/backup", "p")
+else
+    echo "Error: Create the directories ".s:VIMROOT."/, ".s:VIMROOT."/bundle/, ".s:VIMROOT."/undo/, ".s:VIMROOT."/backup/, and ".s:VIMROOT."/swap/ first."
+    exit
+endif
+" double slash means make the filenames unique
+let &backupdir=s:VIMROOT.'/backup//'
+let &directory=s:VIMROOT.'/swap//'
+let &undodir=s:VIMROOT.'/undo//'
+
 """ Prevent lag when hitting escape
 se ttimeoutlen=0
 se timeoutlen=1000 
