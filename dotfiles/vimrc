@@ -141,11 +141,12 @@ endfunction
 """ General Key mappings
 call KM("F1",  ":cwin")              " F1     - Show Quickfix
 call KM("C-s", ":w")                 " Ctrl S - Save
+call KM("C-q", ":call Quit()")       " Ctrl Q - Quit
+call KM("C-z", ":undo")              " Ctrl Z - Undo
+""" with interaction
 call KMI("C-f", "/")                 " Ctrl F - Find
 call KMI("C-h", ":%s/")              " Ctrl H - Search and Replace
-call KM("C-q", ":call Quit()")       " Ctrl Q - Quit
-call KM("C-p", ":FZF")               " Ctrl P - Fuzzy finder
-call KM("C-z", ":undo")              " Ctrl Z - Undo
+call KMI("C-p", ":FZF<cr>")               " Ctrl P - Fuzzy finder
 """ Follow links in markdown         " Ctrl l - Follow wiki links
 call KM("c-l", "yi]:e <c-r>\".md", "markdown") 
 """ Key mappings for Go
