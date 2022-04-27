@@ -11,7 +11,6 @@ endif
 
 call plug#begin()
 Plug 'fatih/vim-go'
-Plug 'fatih/molokai'
 Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,13 +18,13 @@ Plug 'junegunn/fzf'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'leafOfTree/vim-svelte-plugin'
 " required
 call plug#end()            
 
 """ Color Scheme
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
+colorscheme monokai
+se termguicolors
 
 """ Configure Go default
 let g:go_auto_type_info = 1         " always show info

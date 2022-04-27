@@ -48,25 +48,22 @@
   * ctrl + F5 : toggle play/pause
   * ctrl + F6 : next song
 
-* VSCode keybindings
-  * ctrl + shift + b : show explorer in the sidebar
-  * ctrl + shift + x : show extenstion in the sidebar
-  * ctrl + shift + f : show search sidebar
-  * ctrl + shift + g : show source controle in sidebar
-  * ctrl + shift + j : join lines
-  * ctrl + j : toggle terminal panel
-  * shift + ² : toggle into terminal
-  * ctrl + shift + ² : create new terminal
-
 * Vim keybindings (from any mode : insert, normal or visual)
-* Ctrl B : Build Go program
-* Ctrl R : Run Go program
-* Ctrl S : Save the file
-* Ctrl F : Find text
-* Ctrl H : Replace text
-* Ctrl Q : Secure quit
-* Ctrl I : Toggle show invisible characters
-
+ * ctrl o/i : reopen previous/next buffer
+ * ctrl p   : fzf search 
+ * ctrl ⬆/⬇ : move line or selection up/down
+ * ctrl l   : (markdown) follow link as [[somewher]]
+ * ctrl s   : save
+ * ctrl q   : confirm before quit if not saved
+ * ctrl w   : navigate between windowses
+ * ctrl z   : undo
+ * ctrl f   : find (like /)
+ * ctrl h   : replace
+ * F1       : quickfix
+ * F2       : (go) rename
+ * F12      : (go) go to definition
+ * ctrl b   : (go) build
+ * ctrl /   : comment a line or a selection
 
 ## Terminal
 
